@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Asciidoc quick reference guide :: Red Hat Open Training Developer Guide</title>
+    <title>Asciidoc Quick Reference Guide :: Red Hat Open Training Developer Guide</title>
     <link rel="prev" href="glossary.html">
     <link rel="next" href="faq.html">
     <meta name="generator" content="Antora 3.1.3">
@@ -99,7 +99,7 @@
     <a class="nav-link" href="glossary.html">Glossary</a>
   </li>
   <li class="nav-item is-current-page" data-depth="2">
-    <a class="nav-link" href="asciidocqrg.html">Asciidoc quick reference guide</a>
+    <a class="nav-link" href="asciidocqrg.html">Asciidoc Quick Reference Guide</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="faq.html">Frequently Asked Questions</a>
@@ -141,7 +141,7 @@
   <ul>
     <li><a href="../index.html">Red Hat Open Training Developer Guide</a></li>
     <li><a href="index.html">References</a></li>
-    <li><a href="asciidocqrg.html">Asciidoc quick reference guide</a></li>
+    <li><a href="asciidocqrg.html">Asciidoc Quick Reference Guide</a></li>
   </ul>
 </nav>
 </div>
@@ -150,36 +150,36 @@
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<h1 class="page">Asciidoc quick reference guide</h1>
+<h1 class="page">Asciidoc Quick Reference Guide</h1>
 <div class="sect1">
 <h2 id="_headings"><a class="anchor" href="#_headings"></a>HEADINGS</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Refer the the heading of this page for the example of the <strong>top level heading</strong>. This is referenced for navigation (previous/next) of the pages in rendered training content.</p>
+<p>Refer to the heading of this page (<em>Asciidoc Quick Reference Guide</em>) for an example of the <strong>top level heading</strong>. This is used for the navigation (previous/next) of pages in the rendered training content.</p>
 </div>
 <div class="listingblock">
 <div class="title">Syntax:</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">= This is top level heading</code></pre>
+<pre class="highlightjs highlight"><code class="language-none hljs">= This is a top level heading</code></pre>
 </div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_this_is_second_level_heading"><a class="anchor" href="#_this_is_second_level_heading"></a>This is Second level heading</h2>
+<h2 id="_this_is_a_second_level_heading"><a class="anchor" href="#_this_is_a_second_level_heading"></a>This is a second level heading</h2>
 <div class="sectionbody">
 <div class="listingblock">
 <div class="title">Syntax:</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">== This is Second level heading</code></pre>
+<pre class="highlightjs highlight"><code class="language-none hljs">== This is a second level heading</code></pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_this_is_third_level_heading"><a class="anchor" href="#_this_is_third_level_heading"></a>This is Third level heading</h3>
+<h3 id="_this_is_a_third_level_heading"><a class="anchor" href="#_this_is_a_third_level_heading"></a>This is a third level heading</h3>
 <div class="listingblock">
 <div class="title">Syntax:</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">=== This is Third level heading</code></pre>
+<pre class="highlightjs highlight"><code class="language-none hljs">=== This is a third level heading</code></pre>
 </div>
 </div>
 </div>
@@ -189,34 +189,34 @@
 <h2 id="_text"><a class="anchor" href="#_text"></a>TEXT</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>This is example of normal text.
-You may write the text with <strong>Bold</strong> or <em>Italic</em>, font.
-You may also use <code>commands in back ticks</code> as per requirement.
-You may <mark>highlight</mark> the <mark>required portion</mark> of any text.</p>
+<p>This is example of normal text.<br>
+You can write the text in <strong>Bold</strong> or in <em>italics</em>.<br>
+You can use <code>commands</code>.<br>
+You can <mark>highlight</mark> text.</p>
 </div>
 <div class="listingblock">
 <div class="title">Syntax:</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-none hljs">This is example of normal text.
-You may write the text with *Bold* or _Italic_, font.
-You may also use `commands in back ticks` as per requirement.
-You may #highlight# the #required portion# of any text.</code></pre>
+You can write the text in *Bold* or in _italics_.
+You can use `commands` (note the backticks).
+You can #highlight# text.</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>Add the text with gap of a line for new paragraph.</p>
+<p>For a new paragraph, skip a line.</p>
 </div>
 <div class="paragraph">
-<p>You may also use hard line breaks like this <br>
-for new line in single paragraph.</p>
+<p>You may also use hard line breaks like this<br>
+for a new line within the paragraph.</p>
 </div>
 <div class="listingblock">
 <div class="title">Syntax:</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">Add the text with gap of a line for new paragraph.
+<pre class="highlightjs highlight"><code class="language-none hljs">For a new paragraph, skip a line.
 
 You may also use hard line breaks like this +
-for new line in single paragraph.</code></pre>
+for a new line within the paragraph.</code></pre>
 </div>
 </div>
 </div>
@@ -224,43 +224,31 @@ for new line in single paragraph.</code></pre>
 <div class="sect1">
 <h2 id="_links"><a class="anchor" href="#_links"></a>LINKS</h2>
 <div class="sectionbody">
-<div class="ulist">
-<ul>
-<li>
-<p>Example use of hyperlink to external website with <a href="https://docs.asciidoctor.org/asciidoc/latest/" target="_blank" rel="noopener">click here</a> option. The link opens in another tab or window of the browser.</p>
-</li>
-</ul>
+<div class="paragraph">
+<p>Link to an <strong>external website</strong> with the <a href="https://docs.asciidoctor.org/asciidoc/latest/" target="_blank" rel="noopener">click here</a> option. (This will open in another tab or window of the browser.)</p>
 </div>
 <div class="listingblock">
 <div class="title">Syntax:</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">Example use of hyperlink to external website with https://docs.asciidoctor.org/asciidoc/latest/[click here,window=_blank] option.</code></pre>
+<pre class="highlightjs highlight"><code class="language-none hljs">Link to an external website with https://docs.asciidoctor.org/asciidoc/latest/[click here,window=_blank].</code></pre>
 </div>
 </div>
-<div class="ulist">
-<ul>
-<li>
-<p>Example use of hyperlink to <a href="#demolab:section1.adoc" class="xref unresolved">the other page in the different section</a> within the same course. This link opens in the same browser window.</p>
-</li>
-</ul>
+<div class="paragraph">
+<p>Link to a different <strong>page in the same section</strong> with <a href="#text.adoc" class="xref unresolved">the other page within the same section</a>. (This will open in the same browser window.)</p>
 </div>
 <div class="listingblock">
 <div class="title">Syntax:</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">Example use of hyperlink to xref:demolab:section1.adoc[the other page in the different section] within the same course. This link opens in the same browser window.</code></pre>
+<pre class="highlightjs highlight"><code class="language-none hljs">Link to another page in the same section with xref:text.adoc[the other page within the same section].</code></pre>
 </div>
 </div>
-<div class="ulist">
-<ul>
-<li>
-<p>Example use of hyperlink to <a href="#text.adoc" class="xref unresolved">the other page within the same section</a> of the course. This link opens in the same browser window.</p>
-</li>
-</ul>
+<div class="paragraph">
+<p>Link to a <strong>page in a different section</strong> with <a href="#demolab:section1.adoc" class="xref unresolved">the other page in the different section</a>. (This will open in the same browser window.)</p>
 </div>
 <div class="listingblock">
 <div class="title">Syntax:</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">Example use of hyperlink to xref:text.adoc[the other page within the same section] of the course. This link opens in the same browser window.</code></pre>
+<pre class="highlightjs highlight"><code class="language-none hljs">Link to a page in a different section with xref:demolab:section1.adoc[the other page in the different section].</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -351,7 +339,7 @@ for new line in single paragraph.</code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">Code block for command with copy button.</code></pre>
+<pre class="highlightjs highlight"><code class="language-none hljs">Code block with copy button.</code></pre>
 </div>
 </div>
 <div class="listingblock">
@@ -492,7 +480,7 @@ Highlighted text for Caution Callout
 <h2 id="_media"><a class="anchor" href="#_media"></a>MEDIA</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>To render an image on the page, copy required image in <code>modules/chapterN/images</code> directory and reference it as below</p>
+<p>To render an image on the page, copy the image into the <code>modules/chapterN/images</code> directory and reference it by filename.</p>
 </div>
 <div class="listingblock">
 <div class="content">
