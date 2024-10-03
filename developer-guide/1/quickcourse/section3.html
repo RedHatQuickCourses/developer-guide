@@ -150,8 +150,41 @@
 <h1 class="page">Quick course content format guide</h1>
 <div class="imageblock unresolved">
 <div class="content">
-<img src="quick-course-structure.jpg" alt="quick course structure">
+<img src="qx-structure.jpg" alt="qx structure">
 </div>
+</div>
+<div class="paragraph">
+<p>The structure of the course is organized as a hierarchy, so it&#8217;s helpful to think of the content in terms of chapters, or modules, and then pages, or sections.</p>
+</div>
+<div class="paragraph">
+<p>At the top level (course), the antora.yml file defines the overall structure. It  has the course title and the links to <code>nav.adoc</code> files in each module (aka chapter - they are the same thing here).</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-none hljs">name: course
+title: Course Title
+version: 1
+nav:
+- modules/ch1/nav.adoc
+- modules/ch2/nav.adoc
+- modules/ch3/nav.adoc</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>It may be clear at this point that we need a <code>modules</code> directory, with each module/chapter as a sub-directory. They do not need to be labeled ch1, ch2, etc, but their labels would need to appear in the above antora file.</p>
+</div>
+<div class="paragraph">
+<p>Each module/chapter directory should have a 'nav.adoc' file with the following syntax:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-none hljs">* xref:index.adoc[]
+** xref:section1.adoc[]
+** xref:section2.adoc[]</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This is the listing of the adoc files that actually contain the content. These should be placed in a <code>pages</code> directory. Any images that need to be referenced go into an <code>images</code> directory at the same level as <code>pages</code> and the 'nav.adoc' file referenced above.</p>
 </div>
 <div class="paragraph">
 <p>See <a href="../references/asciidocqrg.html" class="xref page">Asciidoc quick reference guide</a> for help with drafting of your content.</p>
