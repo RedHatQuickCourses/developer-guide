@@ -1,9 +1,0 @@
-= Identify training requirement
-
-The training you wish to contribute could originate from several sources:
-
-* You may identify a knowledge gap based on your own experience.
-* You might notice a gap within your team that you want to address through training.
-* You may receive a request from another team, partner, or customer for specific training.
-* You could find a training topic in our backlog (FIXME link) that interests you and would like to contribute to.
-

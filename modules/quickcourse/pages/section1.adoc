@@ -59,9 +59,7 @@ image::../devspace-pop-up.png[]
 
 . When you save your changes in the content files in devspace interface, the changes will be reflected in the rendered content url as soon as you refresh the url.
 
-
-
-FIXME steps from https://github.com/RedHatQuickCourses/course-starter-template/blob/main/DEVSPACE.md
+See https://github.com/RedHatQuickCourses/course-starter-template/blob/main/DEVSPACE.md
 
 == Commit changes to GitHub
 

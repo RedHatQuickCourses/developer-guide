@@ -1,3 +1,0 @@
-= Section 1
-
-FIXME: Use the relevant content from https://redhatquickcourses.github.io/welcome/1/guide/overview.html[Contributor Guide,window=_blank] and https://github.com/RedHatQuickCourses/course-starter-template/blob/main/DEVSPACE.md[Development using devspace documentation,window=_blank]

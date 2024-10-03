@@ -1,6 +1,0 @@
-= Quality check and Publish
-
-NOTE: The steps on this page are to be followed by the training team member assisting you with your Open Training contribution.
-
-FIXME: (TBD) Steps for submitting content for quality check and publishing with expected ETA.
-

@@ -1,4 +1,4 @@
-= Red Hat Open Training Developer Guide
+= Red Hat Open Training Contributor Guide
 :navtitle: Home
 
 == Introduction
@@ -8,6 +8,3 @@ This comprehensive guide serves as a reference for anyone looking to contribute 
 The Open Training Creation program empowers subject matter experts within the organization to share their knowledge and expertise across the company and beyond.
 
 This offering aims to reduce the time required to build training content while addressing challenges such as covering a wide range of technologies, adapting to fast-changing product life cycles, and meeting the diverse needs of different audiences.
-
-
-FIXME: change the title to contributor guide

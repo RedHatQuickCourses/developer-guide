@@ -1,7 +1,0 @@
-= QuickCourse Contributor Guide (devspace)
-
-This section contains instructions on how to create and publish quick courses using the development environment offered by devspace.
-
-Use the instructions in this section if you plan to develop content using the development environment offered by our DevSpace implementation. 
-
-NOTE: You can skip this section if you are using your local system for content development.

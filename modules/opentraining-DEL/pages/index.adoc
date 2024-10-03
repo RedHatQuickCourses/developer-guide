@@ -1,5 +1,0 @@
-= Start here
-
-The Open Training Creation program empowers subject matter experts within the organization to share their knowledge and expertise across the company and beyond.
-
-This offering aims to reduce the time required to build training content while addressing challenges such as covering a wide range of technologies, adapting to fast-changing product life cycles, and meeting the diverse needs of different audiences.

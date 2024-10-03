@@ -1,6 +1,34 @@
 = Quick course content format guide
 
-image::quick-course-structure.jpg[]
+image::qx-structure.jpg[]
+
+The structure of the course is organized as a hierarchy, so it's helpful to think of the content in terms of chapters, or modules, and then pages, or sections.
+
+At the top level (course), the antora.yml file defines the overall structure. It  has the course title and the links to `nav.adoc` files in each module (aka chapter - they are the same thing here).
+
+[source]
+----
+name: course
+title: Course Title
+version: 1
+nav:
+- modules/ch1/nav.adoc
+- modules/ch2/nav.adoc
+- modules/ch3/nav.adoc
+----
+
+It may be clear at this point that we need a `modules` directory, with each module/chapter as a sub-directory. They do not need to be labeled ch1, ch2, etc, but their labels would need to appear in the above antora file.
+
+Each module/chapter directory should have a 'nav.adoc' file with the following syntax:
+
+[source]
+----
+* xref:index.adoc[]
+** xref:section1.adoc[]
+** xref:section2.adoc[]
+----
+
+This is the listing of the adoc files that actually contain the content. These should be placed in a `pages` directory. Any images that need to be referenced go into an `images` directory at the same level as `pages` and the 'nav.adoc' file referenced above. 
 
 See xref:references:asciidocqrg.adoc[Asciidoc quick reference guide] for help with drafting of your content.
 

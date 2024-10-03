@@ -82,8 +82,6 @@ Link to a *page in a different section* with xref:demolab:section1.adoc[the othe
 Link to a page in a different section with xref:demolab:section1.adoc[the other page in the different section].
 ----
 
-FIXME: steps for link within the same page.
-
 == LISTS AND BULLETS
 
 . Numbered Step 1 
@@ -122,39 +120,7 @@ FIXME: steps for link within the same page.
 
 
 == CODE BLOCKS
-
-FIXME: The syntax for the `source` option is not rendered correctly in the code block.
-
-[source]
-----
-Code block with copy button.
-----
-
-.Syntax:
-[source]
-----
-FIXME
-[source]
-----
-Code block for command with copy button.
-----
-----
-
-.Sample Output
-----
-Code block to show sample output of the command.
-This does not have copy button.
-----
-
-[source]
-----
-FIXME
-.Sample Output
-----
-Code block to show sample output of the command.
-This does not have copy button.
-----
-----
+Refer to https://docs.asciidoctor.org/asciidoc/latest/verbatim/source-blocks/[Asciidoc documentation,window=_blank].
 
 
 == CALLOUTS
@@ -203,7 +169,7 @@ CAUTION: Highlighted text for Caution Callout
 
 To render an image on the page, copy the required image in `modules/chapterN/images` directory and reference it as below.
 ----
-image::sample-image.png[]
+image::sample-image.jpg[]
 ----
 
 Example:
@@ -258,5 +224,3 @@ Table with header row:
 |Cell in column 1, row 3
 |Cell in column 2, row 3
 |===
-
-FIXME: Use of tables needs better explanation and example.

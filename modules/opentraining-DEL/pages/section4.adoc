@@ -1,7 +1,0 @@
-= Create content repo and Lab environment
-
-NOTE: The steps on this page are to be followed by the training team member assisting you with your Open Training contribution.
-
-FIXME: Pull content from https://github.com/RedHatQuickCourses/course-starter-template/blob/main/README.md
-
-FIXME: Steps for Lab environment to be done.

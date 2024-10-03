@@ -1,3 +1,0 @@
-= Develop Training
-
-FIXME: Pull content from https://github.com/RedHatQuickCourses/course-starter-template/blob/main/README.md
