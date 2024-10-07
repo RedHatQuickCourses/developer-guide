@@ -1,6 +1,6 @@
 = Quick course content format guide
 
-image::qx-structure.jpg[]
+image::../qc-structure.jpg[]
 
 The structure of the course is organized as a hierarchy, so it's helpful to think of the content in terms of chapters, or modules, and then pages, or sections.
 
