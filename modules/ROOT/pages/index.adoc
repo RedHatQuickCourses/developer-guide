@@ -6,7 +6,7 @@
 This comprehensive guide serves as a reference for anyone interested in developing or contributing training content via the Red Hat Open Training program. 
 
 The Open Training program empowers subject matter experts within the organization to share their knowledge and expertise across the company and beyond.
-Read more about the program https://spaces.redhat.com/pages/viewpage.action?pageId=512755273[here].
+Read more about the program https://spaces.redhat.com/pages/viewpage.action?pageId=512755273[here,window=_blank].
 
 A key goal of this program is to enable "citizen developers" and reduce the time required to build and maintain training content.
 Creating training content for such a wide variety of products and technologies with fast product lifecycles to meet the needs of different audiences is impossible to do alone.

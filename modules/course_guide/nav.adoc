@@ -1,4 +1,4 @@
 * xref:index.adoc[]
-** xref:devspaces.adoc[]
-** xref:localsystem.adoc[]
-** xref:coursestructureguide.adoc[]
+** xref:course_structure_guide.adoc[]
+** xref:dev_spaces.adoc[]
+** xref:local_system.adoc[]

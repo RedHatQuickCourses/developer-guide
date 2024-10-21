@@ -16,7 +16,7 @@ Think about this as something closer to a blog.
 
 . Submit a https://docs.google.com/forms/d/e/1FAIpQLSepUaRiRdyA3PEzLP8w59reAsKRe19dL3ewpJGvJ7Gbggt-xg/viewform[training request,window=_blank] for type *Open Training*.
 This will notify our Learning Product Managers and they will contact you as quickly as possible either with a request for more information or with the next steps, which is usually to connect you with the team that will help get your work going.
-
++
 NOTE: You may track or update your request in https://issues.redhat.com/secure/RapidBoard.jspa?rapidView=20243[Jira,window=_blank].
 
 . Once the request is validated and approved, write the content and work with the PTL team to develop the lab environment.
@@ -26,5 +26,5 @@ This is the part that you came here to do and where you should spend most of you
 
 Once you have completed these steps and are ready to start, you can find more guidance in the following sections:
 
-* xref:quickcourse:index.adoc[Course development]
+* xref:course_guide:index.adoc[Course development]
 * xref:lab:index.adoc[Lab development]

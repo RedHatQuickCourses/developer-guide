@@ -2,15 +2,15 @@
 
 This section contains instructions on how to write your content.
 
-First, you can find the overall course structure guide here.
+First, you can find the overall course structure guide xref:course_structure_guide.adoc[here].
 If you are familiar with Antora, you have a small head start.
 If you are new to this, don't worry - you only need to know a few things before you start working on your content.
 
 After this, you can choose your approach to developing the content.
 We have provided two options for you:
 
-. Use a xref:devspaces.adoc[Dev Spaces] instance configured to work with the course repository.
+. Use a xref:dev_spaces.adoc[Dev Spaces] instance configured to work with the course repository.
 If you're not used to using an IDE and are not as familiar with git, this is a good option for you.
 
-. Use your xref:localsystem.adoc[local system].
+. Use your xref:local_system.adoc[local system].
 If you want to use your own customized IDE and you know how to use git, this option is for you.
