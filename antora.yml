@@ -3,7 +3,7 @@ title: Red Hat Open Training Developer Guide
 version: 1
 nav:
 - modules/ROOT/nav.adoc
-- modules/starthere/nav.adoc
-- modules/quickcourse/nav.adoc
+- modules/start_here/nav.adoc
+- modules/course_guide/nav.adoc
 - modules/lab/nav.adoc
 - modules/references/nav.adoc
