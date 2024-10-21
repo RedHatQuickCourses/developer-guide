@@ -1,4 +1,4 @@
-= Course Structure Guide
+= Course Structure
 
 image::../qc-structure.jpg[]
 
