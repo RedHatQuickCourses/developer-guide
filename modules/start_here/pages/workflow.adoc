@@ -1,4 +1,4 @@
-= Get started
+= Getting started
 
 You don't need to overplan, but you should have a plan.
 Follow these high level steps to get started:

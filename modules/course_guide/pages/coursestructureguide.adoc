@@ -1,4 +1,4 @@
-= Quick course content format guide
+= Course Structure Guide
 
 image::../qc-structure.jpg[]
 
