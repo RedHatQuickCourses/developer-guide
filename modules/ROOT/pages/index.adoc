@@ -3,7 +3,7 @@
 
 == Introduction
 
-This comprehensive guide serves as a reference for anyone interested in developing or contributing training content development via the Red Hat Open Training program. 
+This comprehensive guide serves as a reference for anyone interested in developing or contributing training content via the Red Hat Open Training program. 
 
 The Open Training program empowers subject matter experts within the organization to share their knowledge and expertise across the company and beyond.
 Read more about the program https://spaces.redhat.com/pages/viewpage.action?pageId=512755273[here].
