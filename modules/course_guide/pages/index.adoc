@@ -2,7 +2,7 @@
 
 This section contains instructions on how to write your content.
 
-First, you can find the overall course structure guide xref:course_structure_guide.adoc[here].
+First, you can find the overall course structure guide xref:course_structure.adoc[here].
 If you are familiar with Antora, you have a small head start.
 If you are new to this, don't worry - you only need to know a few things before you start working on your content.
 
