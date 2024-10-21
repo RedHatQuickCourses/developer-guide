@@ -1,37 +1,43 @@
 = Use Devspace (skip if using local system)
+
+Every Open Training course is developed in public GitHub repositories.
+In order to make development as easy as possible, we provide you with the option of using a Dev Spaces instance.
+If you're not familiar with this, just think of it as your normal IDE (VSCode in this case) running in the cloud.
+It has everything you should need to write asciidoc, render into a preview, and interact with GitHub to push and pull.
+
 :toc:
 
-== Get started
+== Set up or Access Dev Spaces Instance
 
-Follow the instructions on xref:starthere:workflow.adoc[Get Started] page and wait for a response from the training team.
-
-== Draft content
-
-. Once you receive your GitHub content repository, go to your GitHub project page and, in the README section, click the `Developer Workspace` button.
+. After the GitHub repository is created for the course, you will see a `Developer Workspace` button in the README section of the repository.
++
+Click this button to launch the Dev Spaces instance.
 +
 image::../click-devspace-button.png[]
+
+. When prompted, select the `Log in with OpenShift` button and use the credentials that you were provided.
 +
-. On the next page, click the `Log in with OpenShift` button.
+This is usually your Red Hat SSO credential.
 +
 image::../click-login-with-openshift.png[]
-+
-. Use the credentials provided by the training team to log in.
-+
-image::../ocp-devspace-login.png[]
-+
-. Click on the option to `Open the existing workspace` or `Switch to running workspace` if prompted.
+
+. Once you have successfully logged in, select the option to `Open the existing workspace` or `Switch to running workspace` if prompted.
 +
 Ignore this step if not prompted for this option.
 +
 image::../select-workspace-1.png[]
 +
-or
-+
 image::../select-workspace-2.png[]
-+
+
 . When the VSCode interface loads, click `Yes, I trust the authors`.
 +
 image::../trust-authors.png[]
++
+NOTE: Why do I trust them?
+
+That is it!
+You are ready to start writing your content.
+The file and folder structure is already in place, so you just need to start filling in blanks and deleting files that you won't need.
 
 == Render content draft
 
