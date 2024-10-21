@@ -13,5 +13,5 @@ Creating training content for such a wide variety of products and technologies w
 It takes more than a single team to do this and Red Hat is the perfect place to solicit content and participation from a large group of highly skilled people that care about each other's success.
 
 If you are here, you are already interested.
-Move on to the xref:starthere:workflow.adoc[Getting Started] section if you are new to this.
+Move on to the xref:start_here:workflow.adoc[Getting Started] section if you are new to this.
 Otherwise, use the menu on the left to find a section you need.
