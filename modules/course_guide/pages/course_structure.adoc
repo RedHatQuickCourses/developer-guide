@@ -1,10 +1,10 @@
-= Quick course content format guide
+= Course Structure
 
 image::../qc-structure.jpg[]
 
 The structure of the course is organized as a hierarchy, so it's helpful to think of the content in terms of chapters, or modules, and then pages, or sections.
 
-At the top level (course), the antora.yml file defines the overall structure. It  has the course title and the links to `nav.adoc` files in each module (aka chapter - they are the same thing here).
+At the top level (course), the antora.yml file defines the overall structure. It has the course title and the links to `nav.adoc` files in each module (aka chapter - they are the same thing here).
 
 [source]
 ----

@@ -66,20 +66,20 @@ Link to an *external website* with the https://docs.asciidoctor.org/asciidoc/lat
 Link to an external website with https://docs.asciidoctor.org/asciidoc/latest/[click here,window=_blank].
 ----
 
-Link to a different *page in the same section* with xref:text.adoc[the other page within the same section]. (This will open in the same browser window.)
+Link to a different *page in the same section* with xref:faq.adoc[the other page within the same section]. (This will open in the same browser window.)
 
 .Syntax:
 [source]
 ----
-Link to another page in the same section with xref:text.adoc[the other page within the same section].
+Link to another page in the same section with xref:faq.adoc[the other page within the same section].
 ----
 
-Link to a *page in a different section* with xref:demolab:section1.adoc[the other page in the different section]. (This will open in the same browser window.)
+Link to a *page in a different section* with xref:course_guide:course_structure.adoc[the other page in the different section]. (This will open in the same browser window.)
 
 .Syntax:
 [source]
 ----
-Link to a page in a different section with xref:demolab:section1.adoc[the other page in the different section].
+Link to a page in a different section with xref:course_guide:course_structure.adoc[the other page in the different section].
 ----
 
 == LISTS AND BULLETS
