@@ -148,31 +148,26 @@
 </aside>
 <article class="doc">
 <h1 class="page">Use Devspace (skip if using local system)</h1>
-<div id="toc" class="toc">
-<div id="toctitle">Table of Contents</div>
-<ul class="sectlevel1">
-<li><a href="#_get_started">Get started</a></li>
-<li><a href="#_draft_content">Draft content</a></li>
-<li><a href="#_render_content_draft">Render content draft</a></li>
-<li><a href="#_commit_changes_to_github">Commit changes to GitHub</a></li>
-<li><a href="#_next_step">Next step</a></li>
-</ul>
-</div>
-<div class="sect1">
-<h2 id="_get_started"><a class="anchor" href="#_get_started"></a>Get started</h2>
+<div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>Follow the instructions on <a href="#starthere:workflow.adoc" class="xref unresolved">Get Started</a> page and wait for a response from the training team.</p>
+<p>Every Open Training course is developed in public GitHub repositories.
+In order to make development as easy as possible, we provide you with the option of using a Dev Spaces instance.
+If you&#8217;re not familiar with this, just think of it as your normal IDE (VSCode in this case) running in the cloud.
+It has everything you should need to write asciidoc, render into a preview, and interact with GitHub to push and pull.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_draft_content"><a class="anchor" href="#_draft_content"></a>Draft content</h2>
+<h2 id="_set_up_or_access_dev_spaces_instance"><a class="anchor" href="#_set_up_or_access_dev_spaces_instance"></a>Set up or Access Dev Spaces Instance</h2>
 <div class="sectionbody">
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Once you receive your GitHub content repository, go to your GitHub project page and, in the README section, click the <code>Developer Workspace</code> button.</p>
+<p>After the GitHub repository is created for the course, you will see a <code>Developer Workspace</code> button in the README section of the repository.</p>
+<div class="paragraph">
+<p>Click this button to launch the Dev Spaces instance.</p>
+</div>
 <div class="imageblock">
 <div class="content">
 <img src="_images/click-devspace-button.png" alt="click devspace button">
@@ -180,7 +175,10 @@
 </div>
 </li>
 <li>
-<p>On the next page, click the <code>Log in with OpenShift</code> button.</p>
+<p>When prompted, select the <code>Log in with OpenShift</code> button and use the credentials that you were provided.</p>
+<div class="paragraph">
+<p>This is usually your Red Hat SSO credential.</p>
+</div>
 <div class="imageblock">
 <div class="content">
 <img src="_images/click-login-with-openshift.png" alt="click login with openshift">
@@ -188,15 +186,7 @@
 </div>
 </li>
 <li>
-<p>Use the credentials provided by the training team to log in.</p>
-<div class="imageblock">
-<div class="content">
-<img src="_images/ocp-devspace-login.png" alt="ocp devspace login">
-</div>
-</div>
-</li>
-<li>
-<p>Click on the option to <code>Open the existing workspace</code> or <code>Switch to running workspace</code> if prompted.</p>
+<p>Once you have successfully logged in, select the option to <code>Open the existing workspace</code> or <code>Switch to running workspace</code> if prompted.</p>
 <div class="paragraph">
 <p>Ignore this step if not prompted for this option.</p>
 </div>
@@ -204,9 +194,6 @@
 <div class="content">
 <img src="_images/select-workspace-1.png" alt="select workspace 1">
 </div>
-</div>
-<div class="paragraph">
-<p>or</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -221,8 +208,25 @@
 <img src="_images/trust-authors.png" alt="trust authors">
 </div>
 </div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Why do I trust them?
+</td>
+</tr>
+</table>
+</div>
 </li>
 </ol>
+</div>
+<div class="paragraph">
+<p>That is it!
+You are ready to start writing your content.
+The file and folder structure is already in place, so you just need to start filling in blanks and deleting files that you won&#8217;t need.</p>
 </div>
 </div>
 </div>
