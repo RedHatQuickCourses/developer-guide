@@ -3,8 +3,15 @@
 
 == Introduction
 
-This comprehensive guide serves as a reference for anyone looking to contribute to the training content development via Red Hat Open Training creation program. 
+This comprehensive guide serves as a reference for anyone interested in developing or contributing training content development via the Red Hat Open Training program. 
 
-The Open Training Creation program empowers subject matter experts within the organization to share their knowledge and expertise across the company and beyond.
+The Open Training program empowers subject matter experts within the organization to share their knowledge and expertise across the company and beyond.
+Read more about the program https://spaces.redhat.com/pages/viewpage.action?pageId=512755273[here].
 
-This offering aims to reduce the time required to build training content while addressing challenges such as covering a wide range of technologies, adapting to fast-changing product life cycles, and meeting the diverse needs of different audiences.
+A key goal of this program is to enable "citizen developers" and reduce the time required to build and maintain training content.
+Creating training content for such a wide variety of products and technologies with fast product lifecycles to meet the needs of different audiences is impossible to do alone.
+It takes more than a single team to do this and Red Hat is the perfect place to solicit content and participation from a large group of highly skilled people that care about each other's success.
+
+If you are here, you are already interested.
+Move on to the xref:../../starthere/pages/workflow.adoc[Getting Started] section if you are new to this.
+Otherwise, use the menu on the left to find a section you need.
