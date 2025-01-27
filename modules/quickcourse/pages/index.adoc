@@ -1,4 +1,0 @@
-= QuickCourse Contributor Guide
-
-This section contains instructions on how to use Red Hat Quick Course to build your content.
-You may either use xref:section1.adoc[use devspace] or xref:section2.adoc[your local system] to develop the content.
