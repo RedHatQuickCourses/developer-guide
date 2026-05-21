@@ -1,0 +1,34 @@
+= Setup local system (skip if using devspace)
+:toc:
+
+== Get started
+
+Follow the instructions on xref:starthere:workflow.adoc[Get Started] page and wait for a response from the training team.
+
+== Install required packages
+
+=== Linux
+
+=== Mac
+
+== Work with git repository
+
+* Clone
+* Git add, commit, push
+
+== Preview content
+
+cd $CONTENTREPO
+
+* npm install
+npm install .
+
+* npm watch 
+npm run watch:adoc
+
+* npm serve
+npm run serve
+
+== Next step
+
+Refer to the xref:section3.adoc[Quick course content format guide] for details on formatting your content layout.

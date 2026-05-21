@@ -1,79 +1,41 @@
-= Use Devspace (skip if using local system)
+= Red Hat AI Factory with NVIDIA
+:navtitle: Hackathon Objectives
 
-Every Open Training course is developed in public GitHub repositories.
-In order to make development as easy as possible, we provide you with the option of using a Dev Spaces instance.
-If you're not familiar with this, just think of it as your normal IDE (VSCode in this case) running in the cloud.
-It has everything you should need to write asciidoc, render into a preview, and interact with GitHub to push and pull.
+== Introduction to the AI Factory
 
-:toc:
+Before building the blueprints, we must align on the core value of the platform we are enabling. Red Hat AI Factory with NVIDIA is a co-engineered, enterprise-grade AI solution for building, deploying, and managing AI at scale across hybrid cloud environments. 
 
-== Set up or Access Dev Spaces Instance
+It combines the integrated AI platform capabilities of Red Hat AI Enterprise with NVIDIA's accelerated computing, networking, and NVIDIA AI Enterprise software. The primary goal of this platform is to transform the ad-hoc creation, customization, and deployment of AI models into a repeatable, scalable, and safe-guarded factory process.
 
-. After the GitHub repository is created for the course, you will see a `Developer Workspace` button in the README section of the repository.
-+
-Click this button to launch the Dev Spaces instance.
-+
-image::../click-devspace-button.png[]
+== How Our Hackathon Objectives Drive Business Value
 
-. When prompted, select the `Log in with OpenShift` button and use the credentials that you were provided.
-+
-This is usually your Red Hat SSO credential.
-+
-image::../click-login-with-openshift.png[]
+The five core objectives of this hackathon are not just technical exercises; they directly map to the business outcomes organizations need to move from AI experimentation to industrial-scale, enterprise-wide production. 
 
-. Once you have successfully logged in, select the option to `Open the existing workspace` or `Switch to running workspace` if prompted.
-+
-Ignore this step if not prompted for this option.
-+
-image::../select-workspace-1.png[]
-+
-image::../select-workspace-2.png[]
+Here is how the blueprints you are building translate to customer success:
 
-. When the VSCode interface loads, click `Yes, I trust the authors`.
-+
-image::../trust-authors.png[]
-+
-NOTE: Why do I trust them?
+=== 1. Production-Ready Deployments
+* **The Objective:** Develop repeatable Quickstarts and Playbooks.
+* **The AI Factory Value:** We provide predefined blueprints and quickstarts with best practice AI workflow patterns. 
+* **The Business Outcome:** This configuration and deployment strategy helps customers realize value faster. It accelerates time-to-value by providing streamlined workflows and instant access to pre-configured models, delivered as NVIDIA NIM microservices.
 
-That is it!
-You are ready to start writing your content.
-The file and folder structure is already in place, so you just need to start filling in blanks and deleting files that you won't need.
+=== 2. Autonomous Agents
+* **The Objective:** Build enablement on the Llama Stack API and OpenShell to deploy industrial-scale AI agents.
+* **The AI Factory Value:** Enterprise AI spending is driven in large part by agentic AI applications.
+* **The Business Outcome:** Organizations can successfully shift their strategies toward high-density, agentic workflows and address the resulting demands on AI inference and infrastructure.
 
-== Render content draft
+=== 3. Performance Standards
+* **The Objective:** Establish hardware and storage benchmarking standards for high-performance environments.
+* **The AI Factory Value:** The platform maximizes infrastructure usage and bolsters inference performance with a unified, high-performance serving stack.
+* **The Business Outcome:** By tapping into Red Hat AI inference capabilities powered by vLLM, NVIDIA TensorRT-LLM, and NVIDIA Dynamo, organizations can meet strict AI service level objectives and reduce the total cost of ownership (TCO).
 
-NOTE: Make your training content repository is initialized and the changes are committed by the training team before using it in the devspace.
+=== 4. Security & Regulations
+* **The Objective:** Integrate STIG-hardened containers and RHEL for regulated industries.
+* **The AI Factory Value:** Leveraging the flexible and stable foundation of Red Hat Enterprise Linux, organizations benefit from advanced security and compliance capabilities built-in from the start.
+* **The Business Outcome:** This delivers a security-hardened foundation for mission-critical AI workloads that require isolation and continuous verification. Furthermore, NVIDIA DOCA microservices build on this foundation to create a zero-trust architecture.
 
-. Load your content repository in the devspace environment using the steps mentioned in FIXME
-. Click on the search bar for Workspace on top and click on Run Task option, then click devfile.
-+
-image::../devspace-runtask.png[]
-+
-. Click on `0-install` option and wait for it to finish.
-. Repeat the earlier step to select devfile and click on `1-watch` option this time.
-. Repeat the same steps and select `2-serve` option now.
-. Pop-up will be displayed at the bottom of the screen.
-+
-image::../devspace-pop-up.png[]
+=== 5. Broader Field Enablement
+* **The Objective:** Create a high-impact content library to enable the broader field.
+* **The AI Factory Value:** The platform is supported on AI factory infrastructure from leading systems manufacturers, including Cisco, Dell Technologies, Lenovo and Supermicro. 
+* **The Business Outcome:** By enabling the field with your blueprints, you empower IT administrators and operations teams to scale and maintain AI deployments with the same operational rigor and predictability as any enterprise workload.
 
-. Create `Open In New Tab` button.
-
-. On the next pop-up message: `Do you want VS Code - Open Source to open the external website?` click on `Open` button.
-
-. Rendered content will now be displayed in another tab.
-
-. You may continue with your content development in the `vscode` interface provided by devspace.
-
-. When you save your changes in the content files in devspace interface, the changes will be reflected in the rendered content url as soon as you refresh the url.
-
-See https://github.com/RedHatQuickCourses/course-starter-template/blob/main/DEVSPACE.md
-
-== Commit changes to GitHub
-
-FIXME
-
-. Step 1
-. Step 2
-
-== Next step
-
-Refer to the xref:section3.adoc[Quick course content format guide] for details on formatting your content layout.
+---

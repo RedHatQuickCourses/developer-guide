@@ -1,34 +1,48 @@
-= Course Structure
+= Designing Memorable Enablement
+:navtitle: Enablement Design Guide
 
-image::../qc-structure.jpg[]
+== Introduction: From Architect to Educator
 
-The structure of the course is organized as a hierarchy, so it's helpful to think of the content in terms of chapters, or modules, and then pages, or sections.
+You are here because you are an elite technical expert. You design, build, and deploy complex architectures every day. However, building a highly effective learning experience requires a slightly different muscle. 
 
-At the top level (course), the antora.yml file defines the overall structure. It has the course title and the links to `nav.adoc` files in each module (aka chapter - they are the same thing here).
+It is easy to fall into the trap of simply writing down a list of commands and configurations. But a data dump is not a learning experience. If we want our peers to truly understand how to deploy Red Hat AI Factory with NVIDIA solutions at scale, we have to move beyond just *telling* them what to do. We must *show* them, challenge them, and share the context behind the keystrokes.
 
-[source]
-----
-name: course
-title: Course Title
-version: 1
-nav:
-- modules/ch1/nav.adoc
-- modules/ch2/nav.adoc
-- modules/ch3/nav.adoc
-----
+Here is your guide to building enablement that keeps learners engaged and makes the knowledge stick.
 
-It may be clear at this point that we need a `modules` directory, with each module/chapter as a sub-directory. They do not need to be labeled ch1, ch2, etc, but their labels would need to appear in the above antora file.
+== 1. Start with the "Why" and the "Aha!" Moment
 
-Each module/chapter directory should have a 'nav.adoc' file with the following syntax:
+Learners disengage when they don't understand why a specific task matters. Before you dive into the technical execution, frame the problem.
 
-[source]
-----
-* xref:index.adoc[]
-** xref:section1.adoc[]
-** xref:section2.adoc[]
-----
+* **Share the Context:** Briefly explain the business or technical challenge this blueprint solves. 
+* **Include the "Hard Knocks":** AI can generate code, but it doesn't have the scars of trial and error. Share what *didn't* work for you during your own learning journey. Explain the pitfalls you encountered and the "Aha!" moment that led to your ultimate solution.
+* **Keep the Human Element:** Write as if you are sitting next to a co-worker, explaining a new way to accomplish a task. Conversational, professional candor is far more engaging than dry textbook prose.
 
-This is the listing of the adoc files that actually contain the content. These should be placed in a `pages` directory. Any images that need to be referenced go into an `images` directory at the same level as `pages` and the 'nav.adoc' file referenced above. 
+== 2. Avoid the "Copy-Paste" Trap (Active vs. Passive Learning)
 
-See xref:references:asciidocqrg.adoc[Asciidoc quick reference guide] for help with drafting of your content.
+If a learner can complete your entire module just by mindlessly copying and pasting commands into a terminal, they haven't learned anything. You have built a script, not a course. 
 
+Force the learner to engage with the environment:
+
+* **Ask Questions:** Prompt them to run a command, observe the output, and ask them to verify a specific parameter before moving to the next step.
+* **Break Things Intentionally:** If you are building a *Break-Fix* scenario, give them a broken environment and a clear set of symptoms. Let them diagnose it like a puzzle rather than handing them the answer key upfront.
+* **Use the "How-To" Effectively:** For step-by-step *How-To* guides, ensure you emphasize active participation. Explain *what* the command is doing to the infrastructure before providing the code block.
+
+== 3. Manage the Cognitive Load
+
+Technical blueprints are heavy. If you present learners with a massive wall of text and code, their eyes will glaze over. Structure your content for scannability and flow.
+
+* **Chunk the Information:** Break complex workflows into smaller, digestible pages or sections. 
+* **Use formatting strategically:** Use bold text to emphasize key parameters. Use the AsciiDoc visual callouts (`NOTE:`, `IMPORTANT:`, `WARNING:`) to break up the visual monotony and draw attention to critical security or STIG requirements.
+* **Visualize the Architecture:** Do not explain a complex NVIDIA multi-node deployment with text alone. Use diagrams (placed in your `images/` folder) to anchor the learner's understanding of the topology before they touch the command line.
+
+== 4. The Anatomy of a Great Enablement Chapter
+
+When structuring a specific chapter or module in your repository, try following this proven arc:
+
+. **The Hook (The Problem):** Define the real-world scenario or customer pain point.
+. **The Strategy (The Concept):** Explain the architectural approach you are taking to solve it and *why* it is the best method.
+. **The Execution (The Lab):** Guide them through the hands-on deployment or troubleshooting steps. 
+. **The Verification (The Proof):** Show them how to test and validate that their deployment or fix was successful.
+. **The Takeaway:** Summarize the core lesson and how it applies to their daily interactions with customers.
+
+NOTE: Remember, your goal is to empower your colleagues. By shaping your raw knowledge into a structured, engaging instrument, you are building a community of capability around the Red Hat AI Factory.
