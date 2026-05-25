@@ -3,8 +3,9 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Resources :: Red Hat Open Training Developer Guide</title>
-    <link rel="prev" href="asciidocqrg.html">
+    <title>Execution Strategy &amp; Course Structure :: Red Hat Open Training Developer Guide</title>
+    <link rel="prev" href="../index.html">
+    <link rel="next" href="../course_guide/index.html">
     <meta name="generator" content="Antora 3.1.3">
     <link rel="stylesheet" href="../../../_/css/site.css">
     <script>var uiRootPath = '../../../_'</script>
@@ -45,8 +46,8 @@
   </li>
   <li class="nav-item" data-depth="0">
 <ul class="nav-list">
-  <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="../start_here/workflow.html">Strategy &amp; Structure</a>
+  <li class="nav-item is-current-page" data-depth="1">
+    <a class="nav-link" href="workflow.html">Strategy &amp; Structure</a>
   </li>
 </ul>
   </li>
@@ -89,10 +90,10 @@
     <span class="nav-text">References</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="asciidocqrg.html">AsciiDoc Reference</a>
+    <a class="nav-link" href="../references/asciidocqrg.html">AsciiDoc Reference</a>
   </li>
-  <li class="nav-item is-current-page" data-depth="2">
-    <a class="nav-link" href="resources.html">Resources</a>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../references/resources.html">Resources</a>
   </li>
 </ul>
   </li>
@@ -127,8 +128,7 @@
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
     <li><a href="../index.html">Red Hat Open Training Developer Guide</a></li>
-    <li>References</li>
-    <li><a href="resources.html">Resources</a></li>
+    <li><a href="workflow.html">Strategy &amp; Structure</a></li>
   </ul>
 </nav>
 </div>
@@ -137,22 +137,73 @@
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<h1 class="page">Resources</h1>
-<div class="ulist">
-<ul>
-<li>
-<p><a href="https://docs.asciidoctor.org/asciidoc/latest/" target="_blank" rel="noopener">AsciiDoc Language Documentation</a></p>
-</li>
-<li>
-<p><a href="https://docs.antora.org/antora/latest/" target="_blank" rel="noopener">Antora Documentation</a></p>
-</li>
-<li>
-<p><a href="https://github.com/RedHatQuickCourses/course-starter-template" target="_blank" rel="noopener">RedHatQuickCourses course-starter-template</a></p>
-</li>
-</ul>
+<h1 class="page">Execution Strategy &amp; Course Structure</h1>
+<div class="sect1">
+<h2 id="_content_formats"><a class="anchor" href="#_content_formats"></a>Content Formats</h2>
+<div class="sectionbody">
+<div class="imageblock">
+<div class="content">
+<img src="_images/qc-structure.jpg" alt="qc structure">
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_understanding_the_quickcourse_directory_structure"><a class="anchor" href="#_understanding_the_quickcourse_directory_structure"></a>Understanding the QuickCourse Directory Structure</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The Red Hat QuickCourse toolchain is built on the Antora project. The structure of the course is organized as a hierarchy, so it&#8217;s helpful to think of the content in terms of chapters, or modules, and then pages, or sections.</p>
+</div>
+<div class="paragraph">
+<p>When you open your assigned repository, you will see the following key components:</p>
+</div>
+<div class="sect2">
+<h3 id="_1_the_orchestrator_antora_yml"><a class="anchor" href="#_1_the_orchestrator_antora_yml"></a>1. The Orchestrator: <code>antora.yml</code></h3>
+<div class="paragraph">
+<p>At the top level (course), the <code>antora.yml</code> file defines the overall structure. It contains the course title and the links to the <code>nav.adoc</code> files in each module.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">name: course
+title: Course Title
+version: 1
+nav:
+- modules/ch1/nav.adoc
+- modules/ch2/nav.adoc</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_2_the_chapters_modules"><a class="anchor" href="#_2_the_chapters_modules"></a>2. The Chapters: <code>modules/</code></h3>
+<div class="paragraph">
+<p>You will see a <code>modules</code> directory, with each module/chapter as a sub-directory. They do not need to be labeled ch1, ch2, etc., but their exact folder names must appear in the <code>antora.yml</code> file.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_3_the_map_nav_adoc"><a class="anchor" href="#_3_the_map_nav_adoc"></a>3. The Map: <code>nav.adoc</code></h3>
+<div class="paragraph">
+<p>Inside each module/chapter directory, there is a <code>nav.adoc</code> file. This is the listing of the <code>.adoc</code> files that actually contain your content.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-asciidoc hljs" data-lang="asciidoc">* xref:index.adoc[]
+** xref:section1.adoc[]
+** xref:section2.adoc[]</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_4_the_content_visuals_pages_and_images"><a class="anchor" href="#_4_the_content_visuals_pages_and_images"></a>4. The Content &amp; Visuals: <code>pages/</code> and <code>images/</code></h3>
+<div class="paragraph">
+<p>Your written <code>.adoc</code> files should be placed in a <code>pages</code> directory. Any images that need to be referenced go into an <code>images</code> directory at the same level as <code>pages</code> and the <code>nav.adoc</code> file.</p>
+</div>
+<hr>
+</div>
+</div>
 </div>
 <nav class="pagination">
-  <span class="prev"><a href="asciidocqrg.html">AsciiDoc Reference</a></span>
+  <span class="prev"><a href="../index.html">Event Summary</a></span>
+  <span class="next"><a href="../course_guide/index.html">Course Contributor Guide</a></span>
 </nav>
 </article>
   </div>

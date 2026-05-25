@@ -3,9 +3,9 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Asciidoc Quick Reference Guide :: Red Hat Open Training Developer Guide</title>
-    <link rel="prev" href="glossary.html">
-    <link rel="next" href="faq.html">
+    <title>AsciiDoc Quick Reference Guide :: Red Hat Open Training Developer Guide</title>
+    <link rel="prev" href="../lab/rhdp.html">
+    <link rel="next" href="resources.html">
     <meta name="generator" content="Antora 3.1.3">
     <link rel="stylesheet" href="../../../_/css/site.css">
     <script>var uiRootPath = '../../../_'</script>
@@ -40,33 +40,14 @@
   <li class="nav-item" data-depth="0">
 <ul class="nav-list">
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="../index.html">Home</a>
+    <a class="nav-link" href="../index.html">Event Summary</a>
   </li>
 </ul>
   </li>
   <li class="nav-item" data-depth="0">
 <ul class="nav-list">
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="../starthere/workflow.html">Get started</a>
-  </li>
-</ul>
-  </li>
-  <li class="nav-item" data-depth="0">
-<ul class="nav-list">
-  <li class="nav-item" data-depth="1">
-    <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="../quickcourse/index.html">QuickCourse Contributor Guide</a>
-<ul class="nav-list">
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../quickcourse/section1.html">Use Devspace (skip if using local system)</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../quickcourse/section2.html">Setup local system (skip if using devspace)</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../quickcourse/section3.html">Quick course content format guide</a>
-  </li>
-</ul>
+    <a class="nav-link" href="../start_here/workflow.html">Strategy &amp; Structure</a>
   </li>
 </ul>
   </li>
@@ -74,14 +55,30 @@
 <ul class="nav-list">
   <li class="nav-item" data-depth="1">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="../lab/index.html">Lab infrastructure guide</a>
+    <a class="nav-link" href="../course_guide/index.html">Course Contributor Guide</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../course_guide/course_structure.html">Enablement Design Guide</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../course_guide/dev_spaces.html">Hackathon Objectives</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../course_guide/local_system.html">AI Assisted Course Design Template</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Lab Infrastructure Guide</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../lab/rhdp.html">RHDP (skip if using ROLE)</a>
   </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../lab/role.html">ROLE (skip if using RHDP)</a>
-  </li>
 </ul>
   </li>
 </ul>
@@ -90,16 +87,10 @@
 <ul class="nav-list">
   <li class="nav-item" data-depth="1">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="index.html">References</a>
+    <span class="nav-text">References</span>
 <ul class="nav-list">
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="glossary.html">Glossary</a>
-  </li>
   <li class="nav-item is-current-page" data-depth="2">
-    <a class="nav-link" href="asciidocqrg.html">Asciidoc Quick Reference Guide</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="faq.html">Frequently Asked Questions</a>
+    <a class="nav-link" href="asciidocqrg.html">AsciiDoc Reference</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="resources.html">Resources</a>
@@ -137,8 +128,8 @@
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
     <li><a href="../index.html">Red Hat Open Training Developer Guide</a></li>
-    <li><a href="index.html">References</a></li>
-    <li><a href="asciidocqrg.html">Asciidoc Quick Reference Guide</a></li>
+    <li>References</li>
+    <li><a href="asciidocqrg.html">AsciiDoc Reference</a></li>
   </ul>
 </nav>
 </div>
@@ -147,195 +138,109 @@
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<h1 class="page">Asciidoc Quick Reference Guide</h1>
+<h1 class="page">AsciiDoc Quick Reference Guide</h1>
 <div class="sect1">
-<h2 id="_headings"><a class="anchor" href="#_headings"></a>HEADINGS</h2>
+<h2 id="_introduction"><a class="anchor" href="#_introduction"></a>Introduction</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Refer to the heading of this page (<em>Asciidoc Quick Reference Guide</em>) for an example of the <strong>top level heading</strong>. This is used for the navigation (previous/next) of pages in the rendered training content.</p>
+<p>When building out your playbooks and technical blueprints, you want the focus to remain on the content, not the markup. Use this quick reference guide to handle the most common formatting needs, from basic text styling to embedding rich media and visual callouts.</p>
 </div>
-<div class="listingblock">
-<div class="title">Syntax:</div>
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">= This is a top level heading</code></pre>
+<div class="paragraph">
+<p>For deep dives into the syntax, you can always refer to the official <a href="https://docs.asciidoctor.org/asciidoc/latest/" target="_blank" rel="noopener">AsciiDoc Language Documentation</a> or the <a href="https://docs.antora.org/antora/latest/" target="_blank" rel="noopener">Antora Documentation</a>.</p>
 </div>
-</div>
+<hr>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_this_is_a_second_level_heading"><a class="anchor" href="#_this_is_a_second_level_heading"></a>This is a second level heading</h2>
+<h2 id="_basic_text_formatting"><a class="anchor" href="#_basic_text_formatting"></a>Basic Text Formatting</h2>
 <div class="sectionbody">
+<div class="paragraph">
+<p>Make your text readable by using these standard inline formats:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Bold:</strong> <code><strong>Text goes here</strong></code> renders as <strong>Text goes here</strong></p>
+</li>
+<li>
+<p><strong>Italics:</strong> <code><em>Text goes here</em></code> renders as <em>Text goes here</em></p>
+</li>
+<li>
+<p><strong>Monospace (Code inline):</strong> <code>+`Code goes here</code>+` renders as <code>Code goes here</code></p>
+</li>
+<li>
+<p><strong>Highlight:</strong> <code><mark>Text goes here</mark></code> renders as highlighted text.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_headings_structure"><a class="anchor" href="#_headings_structure"></a>Headings &amp; Structure</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Use equal signs (<code>=</code>) to create sections. Remember that a single <code>=</code> is reserved for the document title at the top of the page.</p>
+</div>
 <div class="listingblock">
-<div class="title">Syntax:</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">== This is a second level heading</code></pre>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_this_is_a_third_level_heading"><a class="anchor" href="#_this_is_a_third_level_heading"></a>This is a third level heading</h3>
-<div class="listingblock">
-<div class="title">Syntax:</div>
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">=== This is a third level heading</code></pre>
-</div>
+<pre class="highlightjs highlight"><code class="language-asciidoc hljs" data-lang="asciidoc">== Level 1 Section (Heading 2)
+=== Level 2 Section (Heading 3)
+==== Level 3 Section (Heading 4)</code></pre>
 </div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_text"><a class="anchor" href="#_text"></a>TEXT</h2>
+<h2 id="_lists"><a class="anchor" href="#_lists"></a>Lists</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>This is example of normal text.<br>
-You can write the text in <strong>Bold</strong> or in <em>italics</em>.<br>
-You can use <code>commands</code>.<br>
-You can <mark>highlight</mark> text.</p>
+<p>Keep your steps clear and concise. Do not nest lists too deeply.</p>
+</div>
+<div class="paragraph">
+<p><strong>Bullet Points (Unordered):</strong></p>
 </div>
 <div class="listingblock">
-<div class="title">Syntax:</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">This is example of normal text.
-You can write the text in *Bold* or in _italics_.
-You can use `commands` (note the backticks).
-You can #highlight# text.</code></pre>
+<pre class="highlightjs highlight"><code class="language-asciidoc hljs" data-lang="asciidoc">* First item
+* Second item
+** Sub-item
+* Third item</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>For a new paragraph, skip a line.</p>
-</div>
-<div class="paragraph">
-<p>You may also use hard line breaks like this<br>
-for a new line within the paragraph.</p>
+<p><strong>Numbered Steps (Ordered):</strong></p>
 </div>
 <div class="listingblock">
-<div class="title">Syntax:</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">For a new paragraph, skip a line.
+<pre class="highlightjs highlight"><code class="language-asciidoc hljs" data-lang="asciidoc">. Step one
+. Step two
+.. Sub-step
+. Step three</code></pre>
+</div>
+</div>
+<hr>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_visual_callouts_admonitions"><a class="anchor" href="#_visual_callouts_admonitions"></a>Visual Callouts (Admonitions)</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>When you need to draw attention to best practices, security warnings (e.g., STIG requirements), or helpful tips, use admonitions.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-asciidoc hljs" data-lang="asciidoc">NOTE: This is a standard note for general information.
 
-You may also use hard line breaks like this +
-for a new line within the paragraph.</code></pre>
+TIP: Use this to share a shortcut or best practice.
+
+IMPORTANT: Use this for crucial information the user must not skip.
+
+WARNING: Use this to warn the user about potential issues.
+
+CAUTION: Use this to advise against actions that could cause data loss or system failure.</code></pre>
 </div>
 </div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_links"><a class="anchor" href="#_links"></a>LINKS</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Link to an <strong>external website</strong> with the <a href="https://docs.asciidoctor.org/asciidoc/latest/" target="_blank" rel="noopener">click here</a> option. (This will open in another tab or window of the browser.)</p>
-</div>
-<div class="listingblock">
-<div class="title">Syntax:</div>
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">Link to an external website with https://docs.asciidoctor.org/asciidoc/latest/[click here,window=_blank].</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Link to a different <strong>page in the same section</strong> with <a href="#text.adoc" class="xref unresolved">the other page within the same section</a>. (This will open in the same browser window.)</p>
-</div>
-<div class="listingblock">
-<div class="title">Syntax:</div>
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">Link to another page in the same section with xref:text.adoc[the other page within the same section].</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Link to a <strong>page in a different section</strong> with <a href="#demolab:section1.adoc" class="xref unresolved">the other page in the different section</a>. (This will open in the same browser window.)</p>
-</div>
-<div class="listingblock">
-<div class="title">Syntax:</div>
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">Link to a page in a different section with xref:demolab:section1.adoc[the other page in the different section].</code></pre>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_lists_and_bullets"><a class="anchor" href="#_lists_and_bullets"></a>LISTS AND BULLETS</h2>
-<div class="sectionbody">
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Numbered Step 1</p>
-</li>
-<li>
-<p>Numbered Step 2</p>
-</li>
-<li>
-<p>Numbered Step 3</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
-<li>
-<p>Sub Numbered Step 1</p>
-</li>
-<li>
-<p>Sub Numbered Step 2</p>
-</li>
-</ol>
-</div>
-</li>
-<li>
-<p>Numbered Step 4</p>
-</li>
-</ol>
-</div>
-<div class="listingblock">
-<div class="title">Syntax:</div>
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">. Numbered Step 1
-. Numbered Step 2
-. Numbered Step 3
-  .. Sub Numbered Step 1
-  .. Sub Numbered Step 2
-. Numbered Step 4</code></pre>
-</div>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Bullet list item 1</p>
-</li>
-<li>
-<p>Bullet list item 2</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Sub Bullet list item 1</p>
-</li>
-<li>
-<p>Sub Bullet list item 2</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>Bullet list item 3</p>
-</li>
-</ul>
-</div>
-<div class="listingblock">
-<div class="title">Syntax:</div>
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">* Bullet list item 1
-* Bullet list item 2
-  ** Sub Bullet list item 1
-  ** Sub Bullet list item 2
-* Bullet list item 3</code></pre>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_code_blocks"><a class="anchor" href="#_code_blocks"></a>CODE BLOCKS</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Refer to <a href="https://docs.asciidoctor.org/asciidoc/latest/verbatim/source-blocks/" target="_blank" rel="noopener">Asciidoc documentation</a>.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_callouts"><a class="anchor" href="#_callouts"></a>CALLOUTS</h2>
-<div class="sectionbody">
+<hr>
 <div class="admonitionblock note">
 <table>
 <tr>
@@ -343,34 +248,10 @@ for a new line within the paragraph.</code></pre>
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-Highlighted text for Note Callout
+This is a standard note for general information.
 </td>
 </tr>
 </table>
-</div>
-<div class="listingblock">
-<div class="title">Syntax:</div>
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">NOTE: Highlighted text for Note Callout</code></pre>
-</div>
-</div>
-<div class="admonitionblock warning">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-warning" title="Warning"></i>
-</td>
-<td class="content">
-Highlighted text for Warning Callout
-</td>
-</tr>
-</table>
-</div>
-<div class="listingblock">
-<div class="title">Syntax:</div>
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">WARNING: Highlighted text for Warning Callout</code></pre>
-</div>
 </div>
 <div class="admonitionblock important">
 <table>
@@ -379,141 +260,172 @@ Highlighted text for Warning Callout
 <i class="fa icon-important" title="Important"></i>
 </td>
 <td class="content">
-Highlighted text for Important Callout
+Use this for crucial information the user must not skip.
 </td>
 </tr>
 </table>
 </div>
-<div class="listingblock">
-<div class="title">Syntax:</div>
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">IMPORTANT: Highlighted text for Important Callout</code></pre>
+<hr>
 </div>
 </div>
-<div class="admonitionblock tip">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
-</td>
-<td class="content">
-Highlighted text for Tip Callout
-</td>
-</tr>
-</table>
+<div class="sect1">
+<h2 id="_code_blocks"><a class="anchor" href="#_code_blocks"></a>Code Blocks</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Since you are building technical blueprints, you will frequently share code snippets, JSON, or YAML configurations. Wrap your code in four hyphens (<code>----</code>) and specify the language for syntax highlighting.</p>
 </div>
 <div class="listingblock">
-<div class="title">Syntax:</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">TIP: Highlighted text for Tip Callout</code></pre>
+<pre class="highlightjs highlight"><code class="language-asciidoc hljs" data-lang="asciidoc">[source,yaml]
+----
+apiVersion: v1
+kind: Pod
+metadata:
+  name: example-pod
+----</code></pre>
 </div>
 </div>
-<div class="admonitionblock caution">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-caution" title="Caution"></i>
-</td>
-<td class="content">
-Highlighted text for Caution Callout
-</td>
-</tr>
-</table>
+<hr>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_adding_rich_media_images_videos_html"><a class="anchor" href="#_adding_rich_media_images_videos_html"></a>Adding Rich Media (Images, Videos, HTML)</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Break up large blocks of text with visual architecture diagrams or instructional videos.</p>
+</div>
+<div class="sect2">
+<h3 id="_images"><a class="anchor" href="#_images"></a>Images</h3>
+<div class="paragraph">
+<p>Ensure your images are saved in the <code>images/</code> directory at the same level as your <code>.adoc</code> files.</p>
 </div>
 <div class="listingblock">
-<div class="title">Syntax:</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">CAUTION: Highlighted text for Caution Callout</code></pre>
+<pre class="highlightjs highlight"><code class="language-asciidoc hljs" data-lang="asciidoc">// Basic image insertion
+image::architecture-diagram.png[Architecture Diagram]
+
+// Image with specific formatting (width, alignment)
+image::architecture-diagram.png[Architecture Diagram, width=600, align="center"]</code></pre>
 </div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_videos"><a class="anchor" href="#_videos"></a>Videos</h3>
+<div class="paragraph">
+<p>You can easily embed videos from YouTube or Vimeo to provide visual walk-throughs.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-asciidoc hljs" data-lang="asciidoc">video::dQw4w9WgXcQ[youtube, width=640, height=480]
+video::123456789[vimeo]</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_raw_html_pass_through"><a class="anchor" href="#_raw_html_pass_through"></a>Raw HTML Pass-through</h3>
+<div class="paragraph">
+<p>If you have a specific HTML embed code (like an interactive terminal or a specialized web component) that AsciiDoc doesn&#8217;t natively support, you can pass it straight through to the browser.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-asciidoc hljs" data-lang="asciidoc">++++
+&lt;iframe src="https://example.com/interactive-widget" width="100%" height="500"&gt;&lt;/iframe&gt;
+++++</code></pre>
+</div>
+</div>
+<iframe
+  src="https://demo.arcade.software/pIzuROOj0NbUY4pEHfxN?embed&embed_mobile=inline&embed_desktop=inline&show_copy_link=true"
+  width="100%"
+  height="600px"
+  frameborder="0"
+  allowfullscreen
+  webkitallowfullscreen
+  mozallowfullscreen
+  allow="clipboard-write"
+  muted>
+</iframe>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_media"><a class="anchor" href="#_media"></a>MEDIA</h2>
+<h2 id="_hard_line_breaks"><a class="anchor" href="#_hard_line_breaks"></a>Hard Line Breaks</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>To render an image on the page, copy the required image in <code>modules/chapterN/images</code> directory and reference it as below.</p>
+<p>Sometimes you need to start a new line without creating a completely new paragraph. You can use a hard line break by placing a plus sign (<code>+</code>) at the end of the line.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>image::sample-image.jpg[]</pre>
+<pre class="highlightjs highlight"><code class="language-asciidoc hljs" data-lang="asciidoc">You may also use hard line breaks like this +
+for a new line within the paragraph.</code></pre>
 </div>
 </div>
+<hr>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_links_cross_references"><a class="anchor" href="#_links_cross_references"></a>Links &amp; Cross-References</h2>
+<div class="sectionbody">
 <div class="paragraph">
-<p>Example:</p>
+<p>Connecting your learners to external resources or other parts of your course is crucial for building a cohesive blueprint.</p>
 </div>
-<div class="imageblock unresolved">
-<div class="content">
-<img src="sample-image.png" alt="sample image">
-</div>
-</div>
+<div class="sect2">
+<h3 id="_external_links"><a class="anchor" href="#_external_links"></a>External Links</h3>
 <div class="paragraph">
-<p>Audio files also go into the <code>chapter/images</code> directory and are referenced as below.</p>
+<p>To link to an external website, include the URL followed by the text in brackets. Use <code>window=_blank</code> so it opens in a new tab without losing the course page.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>audio::audio-file.wav[]</pre>
+<pre class="highlightjs highlight"><code class="language-asciidoc hljs" data-lang="asciidoc">Read the https://docs.asciidoctor.org/asciidoc/latest/[official documentation,window=_blank].</code></pre>
 </div>
 </div>
+</div>
+<div class="sect2">
+<h3 id="_internal_links_cross_references"><a class="anchor" href="#_internal_links_cross_references"></a>Internal Links (Cross-References)</h3>
 <div class="paragraph">
-<p>Example:</p>
-</div>
-<div class="audioblock">
-<div class="content">
-<audio src="_images/audio-file.wav" controls>
-Your browser does not support the audio tag.
-</audio>
-</div>
-</div>
-<div class="paragraph">
-<p>Video files also go into the <code>chapter/images</code> directory and are referenced as below.</p>
+<p>To link to another page within the same chapter/section, use the <code>xref:</code> command.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>video::video-file.mp4[]</pre>
+<pre class="highlightjs highlight"><code class="language-asciidoc hljs" data-lang="asciidoc">Check out the xref:faq.adoc[FAQ page] for more details.</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>Example:</p>
+<p>To link to a page in a completely different section/module, include the module name.</p>
 </div>
-<div class="videoblock">
+<div class="listingblock">
 <div class="content">
-<video src="_images/video-file.mp4" controls>
-Your browser does not support the video tag.
-</video>
+<pre class="highlightjs highlight"><code class="language-asciidoc hljs" data-lang="asciidoc">Review the xref:course_guide:course_structure.adoc[Course Structure guide].</code></pre>
 </div>
+</div>
+<hr>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_tables"><a class="anchor" href="#_tables"></a>TABLES</h2>
+<h2 id="_tables"><a class="anchor" href="#_tables"></a>Tables</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Table without header row:</p>
+<p>Tables are fantastic for comparing hardware benchmarks, organizing STIG requirements, or mapping out parameters.</p>
 </div>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 1, row 1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 2, row 1</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 1, row 2</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 2, row 2</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 1, row 3</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 2, row 3</p></td>
-</tr>
-</tbody>
-</table>
 <div class="paragraph">
-<p>Table with header row:</p>
+<p>Here is the syntax for a standard table with a header row:</p>
 </div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-asciidoc hljs" data-lang="asciidoc">[cols="2*",options="header"]
+|===
+|Column 1 Header
+|Column 2 Header
+
+|Cell in column 1, row 2
+|Cell in column 2, row 2
+
+|Cell in column 1, row 3
+|Cell in column 2, row 3
+|===</code></pre>
+</div>
+</div>
+<hr>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 50%;">
@@ -521,8 +433,8 @@ Your browser does not support the video tag.
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-left valign-top">Column 1, header row</th>
-<th class="tableblock halign-left valign-top">Column 2, header row</th>
+<th class="tableblock halign-left valign-top">Column 1 Header</th>
+<th class="tableblock halign-left valign-top">Column 2 Header</th>
 </tr>
 </thead>
 <tbody>
@@ -536,11 +448,47 @@ Your browser does not support the video tag.
 </tr>
 </tbody>
 </table>
+<hr>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_local_media_audio"><a class="anchor" href="#_local_media_audio"></a>Local Media &amp; Audio</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>If you are uploading local media files rather than linking out to YouTube or external URLs, you must place the files directly into the <code>modules/chapterN/images</code> directory.</p>
+</div>
+<div class="paragraph">
+<p><strong>Note: Even audio and video files go into the <code>images</code> folder!</strong></p>
+</div>
+<div class="paragraph">
+<p><strong>To reference an image:</strong></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-asciidoc hljs" data-lang="asciidoc">image::sample-image.jpg[]</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><strong>To reference local video:</strong></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-asciidoc hljs" data-lang="asciidoc">video::video-file.mp4[]</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><strong>To reference local audio (great for voiceover explanations):</strong></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-asciidoc hljs" data-lang="asciidoc">audio::audio-file.wav[]</code></pre>
+</div>
+</div>
 </div>
 </div>
 <nav class="pagination">
-  <span class="prev"><a href="glossary.html">Glossary</a></span>
-  <span class="next"><a href="faq.html">Frequently Asked Questions</a></span>
+  <span class="prev"><a href="../lab/rhdp.html">RHDP (skip if using ROLE)</a></span>
+  <span class="next"><a href="resources.html">Resources</a></span>
 </nav>
 </article>
   </div>

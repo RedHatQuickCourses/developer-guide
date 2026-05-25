@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Course Design Document (CDD) Template :: Red Hat Open Training Developer Guide</title>
+    <link rel="prev" href="dev_spaces.html">
+    <link rel="next" href="../lab/rhdp.html">
+    <meta name="generator" content="Antora 3.1.3">
+    <link rel="stylesheet" href="../../../_/css/site.css">
+    <script>var uiRootPath = '../../../_'</script>
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://www.redhat.com" target="_blank"><img src="../../../_/img/redhat-logo.png" height="40px" alt="Red Hat"></a>
+      <a class="navbar-item" style="font-size: 24px; color: white" href="../../..">Red Hat Open Training Developer Guide</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="https://github.com/RedHatQuickCourses/developer-guide/issues" target="_blank">Report Issues</a>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="developer-guide" data-version="1">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../index.html">Red Hat Open Training Developer Guide</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../index.html">Event Summary</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../start_here/workflow.html">Strategy &amp; Structure</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="index.html">Course Contributor Guide</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="course_structure.html">Enablement Design Guide</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="dev_spaces.html">Hackathon Objectives</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="2">
+    <a class="nav-link" href="local_system.html">AI Assisted Course Design Template</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Lab Infrastructure Guide</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../lab/rhdp.html">RHDP (skip if using ROLE)</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">References</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../references/asciidocqrg.html">AsciiDoc Reference</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../references/resources.html">Resources</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Red Hat Open Training Developer Guide</span>
+    <span class="version">1</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <a class="title" href="../index.html">Red Hat Open Training Developer Guide</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../index.html">1</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../index.html">Red Hat Open Training Developer Guide</a></li>
+    <li><a href="index.html">Course Contributor Guide</a></li>
+    <li><a href="local_system.html">AI Assisted Course Design Template</a></li>
+  </ul>
+</nav>
+</div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Course Design Document (CDD) Template</h1>
+<div class="sect1">
+<h2 id="_using_this_template_with_ai"><a class="anchor" href="#_using_this_template_with_ai"></a>Using This Template with AI</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>As an elite engineer, your time is best spent on technical execution, not formatting documents. You can use this template to accelerate your course design by feeding it into an AI assistant.</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p><strong>AI Prompt to Generate Your CDD:</strong>
+<em>"You are an expert technical instructional designer. I am going to provide you with a blank Course Design Document (CDD) template, followed by my raw notes, code snippets, and objectives for a new Red Hat AI Factory blueprint. Please fill out the template using my notes. Ensure the tone is highly technical, focusing on production-ready deployments, and heavily emphasizes the 'Break-Fix' and 'How-To' troubleshooting elements."</em></p>
+</div>
+</blockquote>
+</div>
+<hr>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_1_course_metadata_executive_summary"><a class="anchor" href="#_1_course_metadata_executive_summary"></a>1. Course Metadata &amp; Executive Summary</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Course Title:</strong> [Insert Blueprint/Playbook Title]</p>
+</li>
+<li>
+<p><strong>Target Product Versions:</strong> [e.g., Red Hat OpenShift AI 3.4+, Red Hat build of Kueue 1.2+, NVIDIA vGPU 16.x]</p>
+</li>
+<li>
+<p><strong>Estimated Duration:</strong> [e.g., 2 Hours, Half-Day]</p>
+</li>
+<li>
+<p><strong>Format:</strong> [Choose one: How-To (Step-by-step) OR Break-Fix (Troubleshooting)]</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Executive Summary:</strong></p>
+</div>
+<div class="paragraph">
+<p><strong>Key Differentiators:</strong>
+* [e.g., Hands-on labs with real A100 GPU clusters]
+* [e.g., Focuses on Day 2 operational troubleshooting rather than just Day 1 installation]</p>
+</div>
+<hr>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_2_target_audience_prerequisites"><a class="anchor" href="#_2_target_audience_prerequisites"></a>2. Target Audience &amp; Prerequisites</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><strong>Primary Persona:</strong> * <strong>Role:</strong> [e.g., Platform Engineer, DevOps/SRE]
+* <strong>Responsibilities:</strong> [e.g., Designing scheduling queues, managing cluster quotas]</p>
+</div>
+<div class="paragraph">
+<p><strong>Prerequisites:</strong>
+* [List required prior knowledge. e.g., Deep understanding of Kubernetes ResourceQuotas]
+* [List required completed training. e.g., Nvidia GPU Enablement module]</p>
+</div>
+<hr>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_3_skill_task_mapping_the_tl3_depth_check"><a class="anchor" href="#_3_skill_task_mapping_the_tl3_depth_check"></a>3. Skill &amp; Task Mapping (The "TL3" Depth Check)</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Before outlining the chapters, map out the core learning objectives (LOs). Every concept must tie directly to a practical task and a troubleshooting scenario.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Learning Objective (LO)</th>
+<th class="tableblock halign-left valign-top">Core Concept (The "Why")</th>
+<th class="tableblock halign-left valign-top">Practical Task (The "How")</th>
+<th class="tableblock halign-left valign-top">Troubleshooting Focus (Day 2)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Example: Deploy Kueue</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Why vanilla Kubernetes scheduling limits GPU efficiency.</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Deploy ResourceFlavors, ClusterQueues, and LocalQueues.</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Diagnosing failed installations due to legacy CRDs.</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">LO 1: [Insert Objective]</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[Insert Concept]</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[Insert Task]</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[Insert Troubleshooting Scenario]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">LO 2: [Insert Objective]</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[Insert Concept]</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[Insert Task]</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[Insert Troubleshooting Scenario]</p></td>
+</tr>
+</tbody>
+</table>
+<hr>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_4_course_architecture_module_breakdown"><a class="anchor" href="#_4_course_architecture_module_breakdown"></a>4. Course Architecture &amp; Module Breakdown</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Break the blueprint down into logical modules (which will become your AsciiDoc <code>chapters</code>). For each module, define the progression.</p>
+</div>
+<div class="sect2">
+<h3 id="_module_1_module_title"><a class="anchor" href="#_module_1_module_title"></a>Module 1: [Module Title]</h3>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Estimated Time:</strong> [e.g., 60 minutes]</p>
+</li>
+<li>
+<p><strong>Learning Objective:</strong> [Tie back to the LOs defined above]</p>
+</li>
+<li>
+<p><strong>Topics Covered:</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>[Topic 1]</p>
+</li>
+<li>
+<p>[Topic 2]</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Hands-on Lab Scenario:</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>[Describe the specific environment and the task the learner must complete. e.g., "Configure MIG partitioning for 2x 3g.20gb instances."]</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Validation Checkpoints (How does the learner know they succeeded?):</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>[e.g., ✅ All GPU operator pods in RUNNING state]</p>
+</li>
+<li>
+<p>[e.g., ✅ Workloads correctly preempted based on priority]</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_module_2_module_title"><a class="anchor" href="#_module_2_module_title"></a>Module 2: [Module Title]</h3>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Estimated Time:</strong> [e.g., 90 minutes]</p>
+</li>
+<li>
+<p><strong>Learning Objective:</strong> [Tie back to the LOs defined above]</p>
+</li>
+<li>
+<p><strong>Topics Covered:</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>[Topic 1]</p>
+</li>
+<li>
+<p>[Topic 2]</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Hands-on Lab / Break-Fix Scenario:</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>[Describe the broken state. e.g., "Learner is given an environment where pending RayCluster workloads fail due to insufficient quota."]</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Validation Checkpoints:</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>[e.g., ✅ Workload resumes and completes successfully]</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<hr>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_5_lab_infrastructure_requirements"><a class="anchor" href="#_5_lab_infrastructure_requirements"></a>5. Lab Infrastructure Requirements</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Define the exact environment the Open Training team (or RHDP) needs to provide for this blueprint to work.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Hardware Requirements:</strong> [e.g., Requires at least 1 worker node equipped with 4 GPUs (e.g., AWS p3.8xlarge instance)]</p>
+</li>
+<li>
+<p><strong>Software/Operators Required:</strong> [e.g., OpenShift Container Platform 4.14+, NVIDIA GPU Operator]</p>
+</li>
+<li>
+<p><strong>Pre-Provisioned State:</strong> [e.g., The NVIDIA GPU Operator must be pre-installed. The GPU worker node must be pre-tainted with <code>nvidia.com/gpu=Exists:NoSchedule</code>]</p>
+</li>
+<li>
+<p><strong>External Access:</strong> [e.g., Requires external route access for API Gateway validation]</p>
+</li>
+</ul>
+</div>
+<hr>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_6_open_questions_technical_decisions"><a class="anchor" href="#_6_open_questions_technical_decisions"></a>6. Open Questions &amp; Technical Decisions</h2>
+<div class="sectionbody">
+<div class="ulist Use this section during the Hackathon to flag blockers or design choices you need to finalize with the team.">
+<ul class="Use this section during the Hackathon to flag blockers or design choices you need to finalize with the team.">
+<li>
+<p>❓ [e.g., Do we standardize on A10s or require a mix of GPU types for the lab?]</p>
+</li>
+<li>
+<p>❓ [e.g., Should we include OpenShift Logging (EFK/Loki) for the troubleshooting section?]</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>cat &lt;&lt;EOF | oc apply -f -
+apiVersion: v1
+kind: Secret
+metadata:
+  name: maas-db-config
+  namespace: models-as-a-service
+type: Opaque
+stringData:
+  DB_CONNECTION_URL: 'postgresql://maasuser:maaspass@maas-postgres:5432/maasdb?sslmode=disable'
+EOF</p>
+</div>
+</div>
+</div>
+<nav class="pagination">
+  <span class="prev"><a href="dev_spaces.html">Hackathon Objectives</a></span>
+  <span class="next"><a href="../lab/rhdp.html">RHDP (skip if using ROLE)</a></span>
+</nav>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <img src="../../../_/img/rhl-logo-red.png" height="40px" alt="Red Hat"  href="https://redhat.com" >
+</footer><script id="site-script" src="../../../_/js/site.js" data-ui-root-path="../../../_"></script>
+<script async src="../../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>
