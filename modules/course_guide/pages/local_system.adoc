@@ -1,34 +1,127 @@
-= Setup local system (skip if using devspace)
-:toc:
+= Course Design Document (CDD) Template
+:navtitle: AI Assisted Course Design Template
 
-== Get started
+== Using This Template with AI
 
-Follow the instructions on xref:starthere:workflow.adoc[Get Started] page and wait for a response from the training team.
+As an elite engineer, your time is best spent on technical execution, not formatting documents. You can use this template to accelerate your course design by feeding it into an AI assistant. 
 
-== Install required packages
+> **AI Prompt to Generate Your CDD:**
+> _"You are an expert technical instructional designer. I am going to provide you with a blank Course Design Document (CDD) template, followed by my raw notes, code snippets, and objectives for a new Red Hat AI Factory blueprint. Please fill out the template using my notes. Ensure the tone is highly technical, focusing on production-ready deployments, and heavily emphasizes the 'Break-Fix' and 'How-To' troubleshooting elements."_
 
-=== Linux
+---
 
-=== Mac
+== 1. Course Metadata & Executive Summary
 
-== Work with git repository
+* **Course Title:** [Insert Blueprint/Playbook Title]
+* **Target Product Versions:** [e.g., Red Hat OpenShift AI 3.4+, Red Hat build of Kueue 1.2+, NVIDIA vGPU 16.x]
+* **Estimated Duration:** [e.g., 2 Hours, Half-Day]
+* **Format:** [Choose one: How-To (Step-by-step) OR Break-Fix (Troubleshooting)]
 
-* Clone
-* Git add, commit, push
+**Executive Summary:**
+[Provide a 2-3 sentence overview. What is this course? Why does it matter to the business? Example: "This course prepares Platform Engineers to deploy MaaS on RHOAI, maximizing GPU ROI by driving utilization up to 90%."]
 
-== Preview content
+**Key Differentiators:**
+* [e.g., Hands-on labs with real A100 GPU clusters]
+* [e.g., Focuses on Day 2 operational troubleshooting rather than just Day 1 installation]
 
-cd $CONTENTREPO
+---
 
-* npm install
-npm install .
+== 2. Target Audience & Prerequisites
 
-* npm watch 
-npm run watch:adoc
+**Primary Persona:** * **Role:** [e.g., Platform Engineer, DevOps/SRE]
+* **Responsibilities:** [e.g., Designing scheduling queues, managing cluster quotas]
 
-* npm serve
-npm run serve
+**Prerequisites:**
+* [List required prior knowledge. e.g., Deep understanding of Kubernetes ResourceQuotas]
+* [List required completed training. e.g., Nvidia GPU Enablement module]
 
-== Next step
+---
 
-Refer to the xref:section3.adoc[Quick course content format guide] for details on formatting your content layout.
+== 3. Skill & Task Mapping (The "TL3" Depth Check)
+
+Before outlining the chapters, map out the core learning objectives (LOs). Every concept must tie directly to a practical task and a troubleshooting scenario. 
+
+[cols="1,1,1,1",options="header"]
+|===
+| Learning Objective (LO) 
+| Core Concept (The "Why") 
+| Practical Task (The "How") 
+| Troubleshooting Focus (Day 2)
+
+| *Example: Deploy Kueue*
+| *Why vanilla Kubernetes scheduling limits GPU efficiency.*
+| *Deploy ResourceFlavors, ClusterQueues, and LocalQueues.*
+| *Diagnosing failed installations due to legacy CRDs.*
+
+| LO 1: [Insert Objective]
+| [Insert Concept]
+| [Insert Task]
+| [Insert Troubleshooting Scenario]
+
+| LO 2: [Insert Objective]
+| [Insert Concept]
+| [Insert Task]
+| [Insert Troubleshooting Scenario]
+|===
+
+---
+
+== 4. Course Architecture & Module Breakdown
+
+Break the blueprint down into logical modules (which will become your AsciiDoc `chapters`). For each module, define the progression.
+
+=== Module 1: [Module Title]
+* **Estimated Time:** [e.g., 60 minutes]
+* **Learning Objective:** [Tie back to the LOs defined above]
+* **Topics Covered:**
+** [Topic 1]
+** [Topic 2]
+* **Hands-on Lab Scenario:**
+** [Describe the specific environment and the task the learner must complete. e.g., "Configure MIG partitioning for 2x 3g.20gb instances."]
+* **Validation Checkpoints (How does the learner know they succeeded?):**
+** [e.g., ✅ All GPU operator pods in RUNNING state]
+** [e.g., ✅ Workloads correctly preempted based on priority]
+
+=== Module 2: [Module Title]
+* **Estimated Time:** [e.g., 90 minutes]
+* **Learning Objective:** [Tie back to the LOs defined above]
+* **Topics Covered:**
+** [Topic 1]
+** [Topic 2]
+* **Hands-on Lab / Break-Fix Scenario:**
+** [Describe the broken state. e.g., "Learner is given an environment where pending RayCluster workloads fail due to insufficient quota."]
+* **Validation Checkpoints:**
+** [e.g., ✅ Workload resumes and completes successfully]
+
+---
+
+== 5. Lab Infrastructure Requirements
+
+Define the exact environment the Open Training team (or RHDP) needs to provide for this blueprint to work.
+
+* **Hardware Requirements:** [e.g., Requires at least 1 worker node equipped with 4 GPUs (e.g., AWS p3.8xlarge instance)]
+* **Software/Operators Required:** [e.g., OpenShift Container Platform 4.14+, NVIDIA GPU Operator]
+* **Pre-Provisioned State:** [e.g., The NVIDIA GPU Operator must be pre-installed. The GPU worker node must be pre-tainted with `nvidia.com/gpu=Exists:NoSchedule`]
+* **External Access:** [e.g., Requires external route access for API Gateway validation]
+
+---
+
+== 6. Open Questions & Technical Decisions
+
+[Use this section during the Hackathon to flag blockers or design choices you need to finalize with the team.]
+* ❓ [e.g., Do we standardize on A10s or require a mix of GPU types for the lab?]
+* ❓ [e.g., Should we include OpenShift Logging (EFK/Loki) for the troubleshooting section?]
+
+
+
+
+cat <<EOF | oc apply -f -
+apiVersion: v1
+kind: Secret
+metadata:
+  name: maas-db-config
+  namespace: models-as-a-service
+type: Opaque
+stringData:
+  DB_CONNECTION_URL: 'postgresql://maasuser:maaspass@maas-postgres:5432/maasdb?sslmode=disable'
+EOF

@@ -1,226 +1,247 @@
-= Asciidoc Quick Reference Guide 
+= AsciiDoc Quick Reference Guide
+:navtitle: AsciiDoc Reference
 
-== HEADINGS
+== Introduction
 
-Refer to the heading of this page (_Asciidoc Quick Reference Guide_) for an example of the *top level heading*. This is used for the navigation (previous/next) of pages in the rendered training content.
+When building out your playbooks and technical blueprints, you want the focus to remain on the content, not the markup. Use this quick reference guide to handle the most common formatting needs, from basic text styling to embedding rich media and visual callouts.
 
-.Syntax:
-[source]
+For deep dives into the syntax, you can always refer to the official https://docs.asciidoctor.org/asciidoc/latest/[AsciiDoc Language Documentation,window=_blank] or the https://docs.antora.org/antora/latest/[Antora Documentation,window=_blank].
+
+---
+
+== Basic Text Formatting
+
+Make your text readable by using these standard inline formats:
+
+* **Bold:** `*Text goes here*` renders as *Text goes here*
+* **Italics:** `_Text goes here_` renders as _Text goes here_
+* **Monospace (Code inline):** `+`Code goes here`+` renders as `Code goes here`
+* **Highlight:** `##Text goes here##` renders as highlighted text.
+
+== Headings & Structure
+
+Use equal signs (`=`) to create sections. Remember that a single `=` is reserved for the document title at the top of the page.
+
+[source,asciidoc]
 ----
-= This is a top level heading
-----
-
-== This is a second level heading
-
-.Syntax:
-[source]
-----
-== This is a second level heading
-----
-
-=== This is a third level heading
-
-.Syntax:
-[source]
-----
-=== This is a third level heading
-----
-
-== TEXT
-
-This is example of normal text. +
-You can write the text in *Bold* or in _italics_. +
-You can use `commands`. +
-You can #highlight# text.
-
-.Syntax:
-[source]
-----
-This is example of normal text.
-You can write the text in *Bold* or in _italics_.
-You can use `commands` (note the backticks).
-You can #highlight# text.
+== Level 1 Section (Heading 2)
+=== Level 2 Section (Heading 3)
+==== Level 3 Section (Heading 4)
 ----
 
-For a new paragraph, skip a line.
+== Lists
 
+Keep your steps clear and concise. Do not nest lists too deeply.
+
+**Bullet Points (Unordered):**
+[source,asciidoc]
+----
+* First item
+* Second item
+** Sub-item
+* Third item
+----
+
+**Numbered Steps (Ordered):**
+[source,asciidoc]
+----
+. Step one
+. Step two
+.. Sub-step
+. Step three
+----
+
+---
+
+== Visual Callouts (Admonitions)
+
+When you need to draw attention to best practices, security warnings (e.g., STIG requirements), or helpful tips, use admonitions. 
+
+[source,asciidoc]
+----
+NOTE: This is a standard note for general information.
+
+TIP: Use this to share a shortcut or best practice.
+
+IMPORTANT: Use this for crucial information the user must not skip.
+
+WARNING: Use this to warn the user about potential issues.
+
+CAUTION: Use this to advise against actions that could cause data loss or system failure.
+----
+
+---
+
+
+NOTE: This is a standard note for general information.
+
+IMPORTANT: Use this for crucial information the user must not skip.
+
+---
+
+== Code Blocks
+
+Since you are building technical blueprints, you will frequently share code snippets, JSON, or YAML configurations. Wrap your code in four hyphens (`----`) and specify the language for syntax highlighting.
+
+[source,asciidoc]
+......
+[source,yaml]
+----
+apiVersion: v1
+kind: Pod
+metadata:
+  name: example-pod
+----
+......
+
+---
+
+== Adding Rich Media (Images, Videos, HTML)
+
+Break up large blocks of text with visual architecture diagrams or instructional videos. 
+
+=== Images
+Ensure your images are saved in the `images/` directory at the same level as your `.adoc` files.
+
+[source,asciidoc]
+----
+// Basic image insertion
+image::architecture-diagram.png[Architecture Diagram]
+
+// Image with specific formatting (width, alignment)
+image::architecture-diagram.png[Architecture Diagram, width=600, align="center"]
+----
+
+=== Videos
+You can easily embed videos from YouTube or Vimeo to provide visual walk-throughs.
+
+[source,asciidoc]
+----
+video::dQw4w9WgXcQ[youtube, width=640, height=480]
+video::123456789[vimeo]
+----
+
+=== Raw HTML Pass-through
+If you have a specific HTML embed code (like an interactive terminal or a specialized web component) that AsciiDoc doesn't natively support, you can pass it straight through to the browser.
+
+[source,asciidoc]
+----
+++++
+<iframe src="https://example.com/interactive-widget" width="100%" height="500"></iframe>
+++++
+----
+
+.example Arcade embed.
+++++
+<iframe 
+  src="https://demo.arcade.software/pIzuROOj0NbUY4pEHfxN?embed&embed_mobile=inline&embed_desktop=inline&show_copy_link=true"
+  width="100%" 
+  height="600px" 
+  frameborder="0" 
+  allowfullscreen
+  webkitallowfullscreen
+  mozallowfullscreen
+  allow="clipboard-write"
+  muted>
+</iframe>
+++++
+
+== Hard Line Breaks
+
+Sometimes you need to start a new line without creating a completely new paragraph. You can use a hard line break by placing a plus sign (`+`) at the end of the line.
+
+[source,asciidoc]
+----
 You may also use hard line breaks like this +
 for a new line within the paragraph.
-
-.Syntax:
-[source]
-----
-For a new paragraph, skip a line.
-
-You may also use hard line breaks like this +
-for a new line within the paragraph.
 ----
 
-== LINKS
+---
 
-Link to an *external website* with the https://docs.asciidoctor.org/asciidoc/latest/[click here,window=_blank] option. (This will open in another tab or window of the browser.)
+== Links & Cross-References
 
-.Syntax:
-[source]
+Connecting your learners to external resources or other parts of your course is crucial for building a cohesive blueprint.
+
+=== External Links
+To link to an external website, include the URL followed by the text in brackets. Use `window=_blank` so it opens in a new tab without losing the course page.
+
+[source,asciidoc]
 ----
-Link to an external website with https://docs.asciidoctor.org/asciidoc/latest/[click here,window=_blank].
-----
-
-Link to a different *page in the same section* with xref:faq.adoc[the other page within the same section]. (This will open in the same browser window.)
-
-.Syntax:
-[source]
-----
-Link to another page in the same section with xref:faq.adoc[the other page within the same section].
+Read the https://docs.asciidoctor.org/asciidoc/latest/[official documentation,window=_blank].
 ----
 
-Link to a *page in a different section* with xref:course_guide:course_structure.adoc[the other page in the different section]. (This will open in the same browser window.)
-
-.Syntax:
-[source]
+=== Internal Links (Cross-References)
+To link to another page within the same chapter/section, use the `xref:` command.
+[source,asciidoc]
 ----
-Link to a page in a different section with xref:course_guide:course_structure.adoc[the other page in the different section].
-----
-
-== LISTS AND BULLETS
-
-. Numbered Step 1 
-. Numbered Step 2
-. Numbered Step 3
-  .. Sub Numbered Step 1
-  .. Sub Numbered Step 2
-. Numbered Step 4
-
-.Syntax:
-[source]
-----
-. Numbered Step 1 
-. Numbered Step 2
-. Numbered Step 3
-  .. Sub Numbered Step 1
-  .. Sub Numbered Step 2
-. Numbered Step 4  
+Check out the xref:faq.adoc[FAQ page] for more details. 
 ----
 
-* Bullet list item 1
-* Bullet list item 2
-  ** Sub Bullet list item 1
-  ** Sub Bullet list item 2
-* Bullet list item 3
-
-.Syntax:
-[source]
+To link to a page in a completely different section/module, include the module name.
+[source,asciidoc]
 ----
-* Bullet list item 1
-* Bullet list item 2
-  ** Sub Bullet list item 1
-  ** Sub Bullet list item 2
-* Bullet list item 3
+Review the xref:course_guide:course_structure.adoc[Course Structure guide]. 
 ----
 
+---
 
-== CODE BLOCKS
-Refer to https://docs.asciidoctor.org/asciidoc/latest/verbatim/source-blocks/[Asciidoc documentation,window=_blank].
+== Tables
 
+Tables are fantastic for comparing hardware benchmarks, organizing STIG requirements, or mapping out parameters. 
 
-== CALLOUTS
+Here is the syntax for a standard table with a header row:
 
-NOTE: Highlighted text for Note Callout
+[source,asciidoc]
+......
+[cols="2*",options="header"]
+|===
+|Column 1 Header
+|Column 2 Header
 
-.Syntax:
-[source]
-----
-NOTE: Highlighted text for Note Callout
-----
+|Cell in column 1, row 2
+|Cell in column 2, row 2
 
-WARNING: Highlighted text for Warning Callout
+|Cell in column 1, row 3
+|Cell in column 2, row 3
+|=== 
+......
 
-.Syntax:
-[source]
-----
-WARNING: Highlighted text for Warning Callout
-----
+---
 
-IMPORTANT: Highlighted text for Important Callout
+[cols="2*",options="header"]
+|===
+|Column 1 Header
+|Column 2 Header
 
-.Syntax:
-[source]
-----
-IMPORTANT: Highlighted text for Important Callout
-----
+|Cell in column 1, row 2
+|Cell in column 2, row 2
 
-TIP: Highlighted text for Tip Callout
+|Cell in column 1, row 3
+|Cell in column 2, row 3
+|===
 
-.Syntax:
-[source]
-----
-TIP: Highlighted text for Tip Callout
-----
+---
 
-CAUTION: Highlighted text for Caution Callout
+== Local Media & Audio
 
-.Syntax:
-[source]
-----
-CAUTION: Highlighted text for Caution Callout
-----
+If you are uploading local media files rather than linking out to YouTube or external URLs, you must place the files directly into the `modules/chapterN/images` directory. 
 
-== MEDIA
+*Note: Even audio and video files go into the `images` folder!*
 
-To render an image on the page, copy the required image in `modules/chapterN/images` directory and reference it as below.
+**To reference an image:**
+[source,asciidoc]
 ----
 image::sample-image.jpg[]
 ----
 
-Example:
-
-image::sample-image.png[]
-
-Audio files also go into the `chapter/images` directory and are referenced as below.
+**To reference local video:**
+[source,asciidoc]
 ----
-audio::audio-file.wav[]
+video::video-file.mp4[] 
 ----
 
-Example: 
-
-audio::audio-file.wav[]
-
-Video files also go into the `chapter/images` directory and are referenced as below.
+**To reference local audio (great for voiceover explanations):**
+[source,asciidoc]
 ----
-video::video-file.mp4[]
+audio::audio-file.wav[] 
 ----
-
-Example:
-
-video::video-file.mp4[]
-
-
-== TABLES
-
-Table without header row:
-
-[cols="1,1"]
-|===
-|Cell in column 1, row 1
-|Cell in column 2, row 1
-
-|Cell in column 1, row 2
-|Cell in column 2, row 2
-
-|Cell in column 1, row 3
-|Cell in column 2, row 3
-|===
-
-Table with header row:
-
-[cols="2*",options="header"]
-|===
-|Column 1, header row
-|Column 2, header row
-
-|Cell in column 1, row 2
-|Cell in column 2, row 2
-
-|Cell in column 1, row 3
-|Cell in column 2, row 3
-|===

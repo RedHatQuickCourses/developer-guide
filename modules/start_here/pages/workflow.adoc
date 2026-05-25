@@ -1,30 +1,44 @@
-= Getting started
+= Execution Strategy & Course Structure
+:navtitle: Strategy & Structure
 
-You don't need to overplan, but you should have a plan.
-Follow these high level steps to get started:
 
-. Make sure you know what kind of training you want to create.
-There are a few different types to choose from:
-* xref:references:glossary.adoc#Know-It[know-it training] focuses on knowledge content and does not have any lab environments.
-Think about this as something closer to a blog.
-* xref:references:glossary.adoc#How-To[how-to training] focuses on hands-on labs across a variety of activities from installation to use-cases with Red Hat products.
-* xref:references:glossary.adoc#Break-Fix[break-fix training] is a subset of how-to and focuses on on troubleshooting activities in a hands-on lab environment.
+== Content Formats
 
-. If you need a learner to have a lab environment, decide which one you want to use:
-* xref:references:glossary.adoc#RHDP[Red Hat Demo Platform (RHDP)] is the preferred lab type and should be suitable for all *how-to* and *break-fix* content.
-* xref:references:glossary.adoc#ROLE[ROLE] can be used for content that has an established plan for publication on the GLS platform.
+image::../qc-structure.jpg[]
 
-. Submit a https://docs.google.com/forms/d/e/1FAIpQLSepUaRiRdyA3PEzLP8w59reAsKRe19dL3ewpJGvJ7Gbggt-xg/viewform[training request,window=_blank] for type *Open Training*.
-This will notify our Learning Product Managers and they will contact you as quickly as possible either with a request for more information or with the next steps, which is usually to connect you with the team that will help get your work going.
-+
-NOTE: You may track or update your request in https://issues.redhat.com/secure/RapidBoard.jspa?rapidView=20243[Jira,window=_blank].
+== Understanding the QuickCourse Directory Structure
 
-. Once the request is validated and approved, write the content and work with the PTL team to develop the lab environment.
-This is the part that you came here to do and where you should spend most of your time.
+The Red Hat QuickCourse toolchain is built on the Antora project. The structure of the course is organized as a hierarchy, so it's helpful to think of the content in terms of chapters, or modules, and then pages, or sections. 
 
-== What Next?
+When you open your assigned repository, you will see the following key components:
 
-Once you have completed these steps and are ready to start, you can find more guidance in the following sections:
+=== 1. The Orchestrator: `antora.yml`
+At the top level (course), the `antora.yml` file defines the overall structure. It contains the course title and the links to the `nav.adoc` files in each module. 
 
-* xref:course_guide:index.adoc[Course development]
-* xref:lab:index.adoc[Lab development]
+[source,yaml]
+----
+name: course
+title: Course Title
+version: 1
+nav:
+- modules/ch1/nav.adoc
+- modules/ch2/nav.adoc
+----
+
+=== 2. The Chapters: `modules/`
+You will see a `modules` directory, with each module/chapter as a sub-directory. They do not need to be labeled ch1, ch2, etc., but their exact folder names must appear in the `antora.yml` file. 
+
+=== 3. The Map: `nav.adoc`
+Inside each module/chapter directory, there is a `nav.adoc` file. This is the listing of the `.adoc` files that actually contain your content. 
+
+[source,asciidoc]
+----
+* xref:index.adoc[]
+** xref:section1.adoc[]
+** xref:section2.adoc[]
+----
+
+=== 4. The Content & Visuals: `pages/` and `images/`
+Your written `.adoc` files should be placed in a `pages` directory. Any images that need to be referenced go into an `images` directory at the same level as `pages` and the `nav.adoc` file. 
+
+---

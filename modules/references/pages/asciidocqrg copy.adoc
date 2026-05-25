@@ -1,0 +1,226 @@
+= Asciidoc Quick Reference Guide 
+
+== HEADINGS
+
+Refer to the heading of this page (_Asciidoc Quick Reference Guide_) for an example of the *top level heading*. This is used for the navigation (previous/next) of pages in the rendered training content.
+
+.Syntax:
+[source]
+----
+= This is a top level heading
+----
+
+== This is a second level heading
+
+.Syntax:
+[source]
+----
+== This is a second level heading
+----
+
+=== This is a third level heading
+
+.Syntax:
+[source]
+----
+=== This is a third level heading
+----
+
+== TEXT
+
+This is example of normal text. +
+You can write the text in *Bold* or in _italics_. +
+You can use `commands`. +
+You can #highlight# text.
+
+.Syntax:
+[source]
+----
+This is example of normal text.
+You can write the text in *Bold* or in _italics_.
+You can use `commands` (note the backticks).
+You can #highlight# text.
+----
+
+For a new paragraph, skip a line.
+
+You may also use hard line breaks like this +
+for a new line within the paragraph.
+
+.Syntax:
+[source]
+----
+For a new paragraph, skip a line.
+
+You may also use hard line breaks like this +
+for a new line within the paragraph.
+----
+
+== LINKS
+
+Link to an *external website* with the https://docs.asciidoctor.org/asciidoc/latest/[click here,window=_blank] option. (This will open in another tab or window of the browser.)
+
+.Syntax:
+[source]
+----
+Link to an external website with https://docs.asciidoctor.org/asciidoc/latest/[click here,window=_blank].
+----
+
+Link to a different *page in the same section* with xref:faq.adoc[the other page within the same section]. (This will open in the same browser window.)
+
+.Syntax:
+[source]
+----
+Link to another page in the same section with xref:faq.adoc[the other page within the same section].
+----
+
+Link to a *page in a different section* with xref:course_guide:course_structure.adoc[the other page in the different section]. (This will open in the same browser window.)
+
+.Syntax:
+[source]
+----
+Link to a page in a different section with xref:course_guide:course_structure.adoc[the other page in the different section].
+----
+
+== LISTS AND BULLETS
+
+. Numbered Step 1 
+. Numbered Step 2
+. Numbered Step 3
+  .. Sub Numbered Step 1
+  .. Sub Numbered Step 2
+. Numbered Step 4
+
+.Syntax:
+[source]
+----
+. Numbered Step 1 
+. Numbered Step 2
+. Numbered Step 3
+  .. Sub Numbered Step 1
+  .. Sub Numbered Step 2
+. Numbered Step 4  
+----
+
+* Bullet list item 1
+* Bullet list item 2
+  ** Sub Bullet list item 1
+  ** Sub Bullet list item 2
+* Bullet list item 3
+
+.Syntax:
+[source]
+----
+* Bullet list item 1
+* Bullet list item 2
+  ** Sub Bullet list item 1
+  ** Sub Bullet list item 2
+* Bullet list item 3
+----
+
+
+== CODE BLOCKS
+Refer to https://docs.asciidoctor.org/asciidoc/latest/verbatim/source-blocks/[Asciidoc documentation,window=_blank].
+
+
+== CALLOUTS
+
+NOTE: Highlighted text for Note Callout
+
+.Syntax:
+[source]
+----
+NOTE: Highlighted text for Note Callout
+----
+
+WARNING: Highlighted text for Warning Callout
+
+.Syntax:
+[source]
+----
+WARNING: Highlighted text for Warning Callout
+----
+
+IMPORTANT: Highlighted text for Important Callout
+
+.Syntax:
+[source]
+----
+IMPORTANT: Highlighted text for Important Callout
+----
+
+TIP: Highlighted text for Tip Callout
+
+.Syntax:
+[source]
+----
+TIP: Highlighted text for Tip Callout
+----
+
+CAUTION: Highlighted text for Caution Callout
+
+.Syntax:
+[source]
+----
+CAUTION: Highlighted text for Caution Callout
+----
+
+== MEDIA
+
+To render an image on the page, copy the required image in `modules/chapterN/images` directory and reference it as below.
+----
+image::sample-image.jpg[]
+----
+
+Example:
+
+image::sample-image.png[]
+
+Audio files also go into the `chapter/images` directory and are referenced as below.
+----
+audio::audio-file.wav[]
+----
+
+Example: 
+
+audio::audio-file.wav[]
+
+Video files also go into the `chapter/images` directory and are referenced as below.
+----
+video::video-file.mp4[]
+----
+
+Example:
+
+video::video-file.mp4[]
+
+
+== TABLES
+
+Table without header row:
+
+[cols="1,1"]
+|===
+|Cell in column 1, row 1
+|Cell in column 2, row 1
+
+|Cell in column 1, row 2
+|Cell in column 2, row 2
+
+|Cell in column 1, row 3
+|Cell in column 2, row 3
+|===
+
+Table with header row:
+
+[cols="2*",options="header"]
+|===
+|Column 1, header row
+|Column 2, header row
+
+|Cell in column 1, row 2
+|Cell in column 2, row 2
+
+|Cell in column 1, row 3
+|Cell in column 2, row 3
+|===

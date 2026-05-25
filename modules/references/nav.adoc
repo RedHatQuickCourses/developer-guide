@@ -1,5 +1,5 @@
-* xref:index.adoc[]
-** xref:glossary.adoc[]
+* References
+// ** xref:glossary.adoc[]
 ** xref:asciidocqrg.adoc[]
-** xref:faq.adoc[]
+// ** xref:faq.adoc[]
 ** xref:resources.adoc[]

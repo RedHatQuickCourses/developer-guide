@@ -1,0 +1,30 @@
+= Getting started
+
+You don't need to overplan, but you should have a plan.
+Follow these high level steps to get started:
+
+. Make sure you know what kind of training you want to create.
+There are a few different types to choose from:
+* xref:references:glossary.adoc#Know-It[know-it training] focuses on knowledge content and does not have any lab environments.
+Think about this as something closer to a blog.
+* xref:references:glossary.adoc#How-To[how-to training] focuses on hands-on labs across a variety of activities from installation to use-cases with Red Hat products.
+* xref:references:glossary.adoc#Break-Fix[break-fix training] is a subset of how-to and focuses on on troubleshooting activities in a hands-on lab environment.
+
+. If you need a learner to have a lab environment, decide which one you want to use:
+* xref:references:glossary.adoc#RHDP[Red Hat Demo Platform (RHDP)] is the preferred lab type and should be suitable for all *how-to* and *break-fix* content.
+* xref:references:glossary.adoc#ROLE[ROLE] can be used for content that has an established plan for publication on the GLS platform.
+
+. Submit a https://docs.google.com/forms/d/e/1FAIpQLSepUaRiRdyA3PEzLP8w59reAsKRe19dL3ewpJGvJ7Gbggt-xg/viewform[training request,window=_blank] for type *Open Training*.
+This will notify our Learning Product Managers and they will contact you as quickly as possible either with a request for more information or with the next steps, which is usually to connect you with the team that will help get your work going.
++
+NOTE: You may track or update your request in https://issues.redhat.com/secure/RapidBoard.jspa?rapidView=20243[Jira,window=_blank].
+
+. Once the request is validated and approved, write the content and work with the PTL team to develop the lab environment.
+This is the part that you came here to do and where you should spend most of your time.
+
+== What Next?
+
+Once you have completed these steps and are ready to start, you can find more guidance in the following sections:
+
+* xref:course_guide:index.adoc[Course development]
+* xref:lab:index.adoc[Lab development]
