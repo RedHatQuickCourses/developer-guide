@@ -4,6 +4,6 @@ version: 1
 nav:
 - modules/ROOT/nav.adoc
 - modules/start_here/nav.adoc
-- modules/course_guide/nav.adoc
+#- modules/course_guide/nav.adoc
 - modules/lab/nav.adoc
 - modules/references/nav.adoc

@@ -1,3 +1,136 @@
+= AsciiDoc & Antora Toolchain Cheat Sheet
+:navtitle: Toolchain Cheat Sheet
+
+== The Goal: Content Over Formatting
+When building your AI Factory blueprints, we want you focused on the architecture, not fighting with markup. 
+
+We use **Antora** to build the site and **AsciiDoc** for the content. It functions as "docs-as-code." Use this cheat sheet for the 90% of formatting you will actually need during the hackathon.
+
+---
+
+== 1. The Antora Repository Map
+When you clone your assigned GitHub repository, you will see a specific folder structure. Do not fight the structure; Antora requires it to compile your course.
+
+[source,text]
+----
+repository-root/
+├── antora.yml               <-- The Orchestrator (Defines course title & module links)
+└── modules/
+    └── chapter1/
+        ├── nav.adoc         <-- The Map (The table of contents for this chapter)
+        ├── pages/           <-- YOUR CONTENT: All your .adoc files go here!
+        └── images/          <-- YOUR MEDIA: Architecture diagrams and screenshots go here!
+----
+
+**Golden Rule:** If you write a new `.adoc` file in the `pages/` directory, you **must** add it to the `nav.adoc` file so it shows up in the course menu.
+*Example `nav.adoc` entry:* `** xref:my-new-page.adoc[Setting up the GPU Operator]`
+
+---
+
+== 2. AsciiDoc Essentials
+
+=== Headings
+Keep it simple. Use equal signs. (Remember: `=` is reserved for the document title at the very top of the page).
+
+[source,asciidoc]
+----
+== Level 1 Section (Heading 2)
+=== Level 2 Section (Heading 3)
+==== Level 3 Section (Heading 4)
+----
+
+=== Text Formatting
+[source,asciidoc]
+----
+Make text **bold** or *italicized*.
+For inline code, commands, or parameters, use the plus sign: +oc get pods+
+----
+
+=== Lists
+[source,asciidoc]
+----
+* First bullet point
+** Nested bullet point
+
+. Step one (Use a single period for numbered lists)
+. Step two
+.. Nested step
+----
+
+---
+
+== 3. Code Blocks & Terminal Output
+Since you are building technical playbooks, you will use code blocks constantly. Always declare the source language for proper syntax highlighting.
+
+**For YAML/Config files:**
+[source,asciidoc]
+......
+[source,yaml]
+----
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: nvidia-gpu-operator
+----
+......
+
+**For Terminal/Bash commands:**
+[source,asciidoc]
+......
+[source,bash]
+----
+curl -X POST http://llama-stack-api:8080/v1/chat/completions \
+  -H "Content-Type: application/json" \
+  -d '{"model": "llama3-8b", "messages": [{"role": "user", "content": "Hello"}]}'
+----
+......
+
+---
+
+== 4. Security Warnings & Pro-Tips (Admonitions)
+Break up walls of text and draw attention to critical requirements (like STIG compliance or destructive commands) using visual callouts.
+
+[source,asciidoc]
+----
+NOTE: The NVIDIA GPU Operator must be installed before proceeding.
+
+WARNING: **STIG Mandate:** Ensure that all containers are configured to run as non-root.
+
+TIP: If you are benchmarking storage, consider using the local NVMe drives attached to the A100 nodes.
+----
+
+---
+
+== 5. Images and Links
+
+**To embed an architecture diagram:**
+(Ensure the image file is actually placed in your `images/` directory!)
+[source,asciidoc]
+----
+image::doca-argus-telemetry.png[DOCA Argus Architecture Diagram]
+----
+
+**To link to an external site:**
+(Always use `window=_blank` so the learner doesn't lose their place in the course!)
+[source,asciidoc]
+----
+Read the link:https://docs.nvidia.com[NVIDIA Documentation, window=_blank].
+----
+
+**To link to another page in your repository:**
+[source,asciidoc]
+----
+Check out the xref:troubleshooting-rayclusters.adoc[Troubleshooting Guide].
+----
+
+---
+
+== Ready? Set. Build.
+You have your CDD outline, you understand the repository structure, and you know the AsciiDoc syntax. 
+
+**It's time to start coding your blueprint.**
+
+////
 = AsciiDoc Quick Reference Guide
 :navtitle: AsciiDoc Reference
 
@@ -245,3 +378,5 @@ video::video-file.mp4[]
 ----
 audio::audio-file.wav[] 
 ----
+
+////

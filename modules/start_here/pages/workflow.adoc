@@ -1,44 +1,63 @@
-= Execution Strategy & Course Structure
-:navtitle: Strategy & Structure
+= AI-Assisted Design Phase (The CDD)
+:navtitle: Course Design Phase
 
+== Skip the Blank Page Syndrome
 
-== Content Formats
+As an elite engineer, your time during this hackathon is best spent on technical execution and architecture. 
 
-image::../qc-structure.jpg[]
+However, before you start writing AsciiDoc, you need a blueprint. We call this the **Course Design Document (CDD)**. We have an automated script (`skill.md`) that will read this CDD and automatically generate your entire GitHub repository structure, folders, and navigation map for you. 
 
-== Understanding the QuickCourse Directory Structure
+To ensure the automation works, you must use an AI assistant to generate your CDD in a highly specific Markdown format.
 
-The Red Hat QuickCourse toolchain is built on the Antora project. The structure of the course is organized as a hierarchy, so it's helpful to think of the content in terms of chapters, or modules, and then pages, or sections. 
+== Step 1: The AI Generation Prompt
 
-When you open your assigned repository, you will see the following key components:
+Copy the prompt below and paste it into your preferred AI assistant (e.g., ChatGPT, Claude, Red Hat Lightspeed) along with your raw technical notes.
 
-=== 1. The Orchestrator: `antora.yml`
-At the top level (course), the `antora.yml` file defines the overall structure. It contains the course title and the links to the `nav.adoc` files in each module. 
-
-[source,yaml]
+[source,text]
 ----
-name: course
-title: Course Title
-version: 1
-nav:
-- modules/ch1/nav.adoc
-- modules/ch2/nav.adoc
+You are an expert technical instructional designer. I am going to provide you with my raw notes, terminal outputs, and code snippets for a new Red Hat AI Factory with NVIDIA technical blueprint. 
+
+Your task is to organize my notes into a structured Course Design Document (CDD) using STRICT Markdown formatting. The tone must be highly technical and geared toward Senior Platform Engineers and SREs. Heavily emphasize production-ready deployments, AI-first delivery methodology (using skills), and troubleshooting.
+
+CRITICAL: You must output the document exactly matching the schema below. Do not deviate from these heading names or the table structure, as this output will be parsed by an automated script.
+
+# [Insert Course Title Here]
+
+# COURSE GOAL
+[Write a 2-3 sentence overarching goal for the blueprint]
+
+# TARGET AUDIENCE
+[Define the primary persona, e.g., SRE, Platform Engineer]
+
+# PREREQUISITES
+[List required prior knowledge and tools]
+
+# LAB INFRASTRUCTURE REQUIREMENTS
+[Define hardware, required software, and pre-provisioned state. Note: Target baseline is NVIDIA Launchpad environments with dual H100 nodes unless otherwise specified.]
+
+# COURSE DESIGN
+| Description | Session Type |
+| --- | --- |
+| LEARNING OBJECTIVE #1: [Insert objective here] | |
+| [Insert specific hands-on task or troubleshooting concept] | Lecture |
+| [Insert the specific Lab scenario and Validation Checkpoints] | Lab |
+| LEARNING OBJECTIVE #2: [Insert objective here] | |
+| [Insert specific hands-on task or troubleshooting concept] | Lecture |
+| [Insert the specific Lab scenario and Validation Checkpoints] | Lab |
+
+Here are my raw notes:
+[INSERT YOUR RAW NOTES, CONFIG FILES, AND IDEAS HERE]
 ----
 
-=== 2. The Chapters: `modules/`
-You will see a `modules` directory, with each module/chapter as a sub-directory. They do not need to be labeled ch1, ch2, etc., but their exact folder names must appear in the `antora.yml` file. 
+== Step 2: Validate the Output & Infrastructure Needs
 
-=== 3. The Map: `nav.adoc`
-Inside each module/chapter directory, there is a `nav.adoc` file. This is the listing of the `.adoc` files that actually contain your content. 
+Once the AI generates your CDD, save it as `prompts/course-design.md` in your repository. Before you run the automation, quickly verify two things:
 
-[source,asciidoc]
-----
-* xref:index.adoc[]
-** xref:section1.adoc[]
-** xref:section2.adoc[]
-----
+* **The Table Structure:** Ensure the `Session Type` column strictly uses terms like `Lab` or `Lecture`. This tells the automation which file templates to use.
+* **The Infrastructure:** Ensure the `# LAB INFRASTRUCTURE REQUIREMENTS` section accurately reflects your needs (targeting the dual H100 baseline) so the Open Training team can successfully host your playbook.
 
-=== 4. The Content & Visuals: `pages/` and `images/`
-Your written `.adoc` files should be placed in a `pages` directory. Any images that need to be referenced go into an `images` directory at the same level as `pages` and the `nav.adoc` file. 
+== Step 3: Auto-Generate Your Repository
 
----
+With your `course-design.md` file saved, you can now run the initialization script to scaffold your entire course structure automatically!
+
+* **Next Step:** Review the **xref:toolchain-cheatsheet.adoc[AsciiDoc & Antora Cheat Sheet]** to see how to format your code blocks and warnings once you start writing your content.

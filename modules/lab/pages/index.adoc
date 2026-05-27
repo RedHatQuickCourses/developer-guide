@@ -1,5 +1,45 @@
-= Lab infrastructure guide
+= NVIDIA Launchpad: Dual H100 Lab Environment
+:navtitle: Lab Environment Guide
 
-This section contains instructions on use of hands-on lab infrastructure for the training. You may either use xref:rhdp.adoc[RHDP] or xref:role.adoc[ROLE] for your lab environment.
+== The Sandbox: NVIDIA Launchpad
 
-See xref:references:faq.adoc[faq] for additional guidance.
+For this Content Accelerator, we have partnered with NVIDIA to host your hackathon workloads on **NVIDIA Launchpad**. Launchpad provides immediate, cloud-hosted access to NVIDIA-accelerated infrastructure. 
+
+Instead of burning days fighting with bare-metal provisioning or cloud quotas, you will be handed the keys to a pre-provisioned, Red Hat AI Factory-ready environment so you can focus entirely on building your blueprints.
+
+== The Hardware: Dual H100 Nodes
+
+The baseline infrastructure for your playbooks will be environments featuring **two NVIDIA H100 Tensor Core GPUs** per worker node. 
+
+**Why the H100 matters for your builds:**
+
+* **Hopper Architecture:** The H100 features a dedicated Transformer Engine, making it exceptionally fast at training and inferencing Large Language Models (LLMs) like Llama 3.
+* **Interconnect:** The dual GPUs are connected via NVLink, allowing them to pool memory and share data at incredibly high bandwidths, which is critical when deploying distributed inference engines (like vLLM or NVIDIA TensorRT-LLM) that require model sharding across multiple GPUs.
+* **Capacity:** This footprint is more than capable of hosting robust RAG (Retrieval-Augmented Generation) pipelines, vector databases, and multi-agent frameworks using the Llama Stack API.
+
+== The Software Stack: The AI Factory Floor
+
+Launchpad abstracts the hardware layer, but beneath your workloads is the full, opinionated **Red Hat AI Factory with NVIDIA** stack. Your environment will come pre-provisioned with the following:
+
+* **Base OS:** Red Hat Enterprise Linux (RHEL) CoreOS.
+* **Orchestration:** Red Hat OpenShift Container Platform (OCP).
+* **The AI Layer:** Red Hat OpenShift AI (RHOAI).
+* **The Drivers:** The **NVIDIA GPU Operator** will be pre-installed and configured. This is the critical bridge that automatically provisions the NVIDIA drivers, container toolkits, and device plugins required to expose the H100s to your Kubernetes pods.
+
+== How Access Will Work
+
+*(Note: Specific credential distribution will occur on the morning of the kickoff).*
+
+. **The Invitation:** You will receive an email invitation to the NVIDIA Launchpad portal.
+. **The Console:** Launchpad operates via a web browser. You will log in to a centralized dashboard where you can access the OpenShift web console, as well as terminal/SSH access to interact with the cluster via `oc` or `kubectl` commands.
+. **Your Namespace:** You will likely be assigned a dedicated project/namespace within the OpenShift cluster to isolate your hackathon work from other teams.
+
+== Rules of Engagement & Best Practices
+
+To ensure everyone has a successful hackathon, please observe these lab practices:
+
+WARNING: **Resource Hygiene:** A dual H100 node is incredibly powerful, but resources are still finite. When you are done testing a heavy LLM deployment, scale your pods down to zero. Do not leave idle models locking up GPU memory overnight.
+
+TIP: **Node Selectors & Tolerations:** When writing your YAML manifests or Helm charts, ensure you are using the correct node selectors and tolerations so your AI workloads actually land on the GPU-enabled worker nodes. (e.g., matching the `nvidia.com/gpu` resource limit).
+
+NOTE: **Assume Ephemerality:** Launchpad environments have a strict time-to-live (TTL) and will be destroyed after the event. Store all your AsciiDoc content, CDDs, and code manifests locally or in your assigned GitHub repository—**not** on the Launchpad cluster itself.
