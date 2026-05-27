@@ -7,11 +7,11 @@ As an elite engineer, your time during this hackathon is best spent on technical
 
 However, before you start writing AsciiDoc, you need a blueprint. We call this the **Course Design Document (CDD)**. We have an automated script (`skill.md`) that will read this CDD and automatically generate your entire GitHub repository structure, folders, and navigation map for you. 
 
-To ensure the automation works, you must use an AI assistant to generate your CDD in a highly specific Markdown format.
+To ensure the automation works, we ask that your CDD be in the following specific Markdown format.
 
 == Step 1: The AI Generation Prompt
 
-Copy the prompt below and paste it into your preferred AI assistant (e.g., ChatGPT, Claude, Red Hat Lightspeed) along with your raw technical notes.
+The prompt below contains the specific template. You are paste it into your preferred AI assistant (e.g., ChatGPT, Claude, Red Hat Lightspeed) along with your raw technical notes. 
 
 [source,text]
 ----
@@ -54,10 +54,9 @@ Here are my raw notes:
 Once the AI generates your CDD, save it as `prompts/course-design.md` in your repository. Before you run the automation, quickly verify two things:
 
 * **The Table Structure:** Ensure the `Session Type` column strictly uses terms like `Lab` or `Lecture`. This tells the automation which file templates to use.
-* **The Infrastructure:** Ensure the `# LAB INFRASTRUCTURE REQUIREMENTS` section accurately reflects your needs (targeting the dual H100 baseline) so the Open Training team can successfully host your playbook.
 
 == Step 3: Auto-Generate Your Repository
 
 With your `course-design.md` file saved, you can now run the initialization script to scaffold your entire course structure automatically!
 
-* **Next Step:** Review the **xref:toolchain-cheatsheet.adoc[AsciiDoc & Antora Cheat Sheet]** to see how to format your code blocks and warnings once you start writing your content.
+* **Next Step:** Review the Formating Cheat Sheet ** to see how to format your code blocks and warnings once you start writing your content.

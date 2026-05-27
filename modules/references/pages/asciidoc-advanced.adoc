@@ -3,7 +3,7 @@
 
 == Leveling Up Your Blueprints
 
-The xref:toolchain-cheatsheet.adoc[Basic Cheat Sheet] covers everything you need to build a functional playbook. However, if you are documenting complex Red Hat AI Factory deployments, you will likely encounter massive YAML files, long terminal outputs, and dynamic software versions. 
+The formatting cheat sheet covers everything you need to build a functional playbook. However, if you are documenting complex Red Hat AI Factory deployments, you will likely encounter massive YAML files, long terminal outputs, and dynamic software versions. 
 
 Use these advanced AsciiDoc features to make your blueprints highly professional, readable, and easy to maintain.
 

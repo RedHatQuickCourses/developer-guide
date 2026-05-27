@@ -36,6 +36,6 @@ By the end of this hackathon, a successful blueprint submission will include:
 
 Ready to start building? We have streamlined the toolchain so you can bypass the formatting hurdles and get straight to the code.
 
-* **Step 1:** Head over to the **xref:start-here/workflow.adoc[AI-Assisted Design Phase]** to put together  and generate your course outline from your raw notes and references.
-* **Step 2:** Review the **xref:references/asciidocqrg.adoc[AsciiDoc & Antora Cheat Sheet]** to understand how to structure your repository and add formatting flavor to your content.
+* **Step 1:** Head over to the **AI-Assisted Design Phase** to put together  and generate your course outline from your raw notes and references.
+* **Step 2:** Review the **Formatting Cheat Sheet** to understand how to structure your repository and add formatting flavor to your content.
 * **Step 3:** Start coding your playbook!
