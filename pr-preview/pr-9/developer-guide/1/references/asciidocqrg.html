@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>AsciiDoc &amp; Antora Toolchain Cheat Sheet :: Red Hat Open Training Developer Guide</title>
+    <link rel="prev" href="../lab/rhdp.html">
+    <link rel="next" href="asciidoc-advanced.html">
+    <meta name="generator" content="Antora 3.1.3">
+    <link rel="stylesheet" href="../../../_/css/site.css">
+    <script>var uiRootPath = '../../../_'</script>
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://www.redhat.com" target="_blank"><img src="../../../_/img/redhat-logo.png" height="40px" alt="Red Hat"></a>
+      <a class="navbar-item" style="font-size: 24px; color: white" href="../../..">Red Hat Open Training Developer Guide</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="https://github.com/RedHatQuickCourses/developer-guide/issues" target="_blank">Report Issues</a>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="developer-guide" data-version="1">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../index.html">Red Hat Open Training Developer Guide</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../index.html">Event Summary</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../start_here/workflow.html">Course Design Phase</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../lab/index.html">Lab Infrastructure Guide</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../lab/rhdp.html">RHDP Lab Selection</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">References</span>
+<ul class="nav-list">
+  <li class="nav-item is-current-page" data-depth="2">
+    <a class="nav-link" href="asciidocqrg.html">Toolchain Cheat Sheet</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="asciidoc-advanced.html">Advanced Formatting</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Red Hat Open Training Developer Guide</span>
+    <span class="version">1</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <a class="title" href="../index.html">Red Hat Open Training Developer Guide</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../index.html">1</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../index.html">Red Hat Open Training Developer Guide</a></li>
+    <li>References</li>
+    <li><a href="asciidocqrg.html">Toolchain Cheat Sheet</a></li>
+  </ul>
+</nav>
+</div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">AsciiDoc &amp; Antora Toolchain Cheat Sheet</h1>
+<div class="sect1">
+<h2 id="_the_goal_content_over_formatting"><a class="anchor" href="#_the_goal_content_over_formatting"></a>The Goal: Content Over Formatting</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>When building your AI Factory blueprints, we want you focused on the architecture, not fighting with markup.</p>
+</div>
+<div class="paragraph">
+<p>We use <strong>Antora</strong> to build the site and <strong>AsciiDoc</strong> for the content. It functions as "docs-as-code." Use this cheat sheet for the 90% of formatting you will actually need during the hackathon.</p>
+</div>
+<hr>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_1_the_antora_repository_map"><a class="anchor" href="#_1_the_antora_repository_map"></a>1. The Antora Repository Map</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>When you clone your assigned GitHub repository, you will see a specific folder structure. Do not fight the structure; Antora requires it to compile your course.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">repository-root/
+├── antora.yml               &lt;-- The Orchestrator (Defines course title &amp; module links)
+└── modules/
+    └── chapter1/
+        ├── nav.adoc         &lt;-- The Map (The table of contents for this chapter)
+        ├── pages/           &lt;-- YOUR CONTENT: All your .adoc files go here!
+        └── images/          &lt;-- YOUR MEDIA: Architecture diagrams and screenshots go here!</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><strong>Golden Rule:</strong> If you write a new <code>.adoc</code> file in the <code>pages/</code> directory, you <strong>must</strong> add it to the <code>nav.adoc</code> file so it shows up in the course menu.
+<strong>Example <code>nav.adoc</code> entry:</strong> <code>** <a href="#my-new-page.adoc" class="xref unresolved">Setting up the GPU Operator</a></code></p>
+</div>
+<hr>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_2_asciidoc_essentials"><a class="anchor" href="#_2_asciidoc_essentials"></a>2. AsciiDoc Essentials</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_headings"><a class="anchor" href="#_headings"></a>Headings</h3>
+<div class="paragraph">
+<p>Keep it simple. Use equal signs. (Remember: <code>=</code> is reserved for the document title at the very top of the page).</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-asciidoc hljs" data-lang="asciidoc">== Level 1 Section (Heading 2)
+=== Level 2 Section (Heading 3)
+==== Level 3 Section (Heading 4)</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_text_formatting"><a class="anchor" href="#_text_formatting"></a>Text Formatting</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-asciidoc hljs" data-lang="asciidoc">Make text **bold** or *italicized*.
+For inline code, commands, or parameters, use the plus sign: +oc get pods+</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_lists"><a class="anchor" href="#_lists"></a>Lists</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-asciidoc hljs" data-lang="asciidoc">* First bullet point
+** Nested bullet point
+
+. Step one (Use a single period for numbered lists)
+. Step two
+.. Nested step</code></pre>
+</div>
+</div>
+<hr>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_3_code_blocks_terminal_output"><a class="anchor" href="#_3_code_blocks_terminal_output"></a>3. Code Blocks &amp; Terminal Output</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Since you are building technical playbooks, you will use code blocks constantly. Always declare the source language for proper syntax highlighting.</p>
+</div>
+<div class="paragraph">
+<p><strong>For YAML/Config files:</strong></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-asciidoc hljs" data-lang="asciidoc">[source,yaml]
+----
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: nvidia-gpu-operator
+----</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><strong>For Terminal/Bash commands:</strong></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-asciidoc hljs" data-lang="asciidoc">[source,bash]
+----
+curl -X POST http://llama-stack-api:8080/v1/chat/completions \
+  -H "Content-Type: application/json" \
+  -d '{"model": "llama3-8b", "messages": [{"role": "user", "content": "Hello"}]}'
+----</code></pre>
+</div>
+</div>
+<hr>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_4_security_warnings_pro_tips_admonitions"><a class="anchor" href="#_4_security_warnings_pro_tips_admonitions"></a>4. Security Warnings &amp; Pro-Tips (Admonitions)</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Break up walls of text and draw attention to critical requirements (like STIG compliance or destructive commands) using visual callouts.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-asciidoc hljs" data-lang="asciidoc">NOTE: The NVIDIA GPU Operator must be installed before proceeding.
+
+WARNING: **STIG Mandate:** Ensure that all containers are configured to run as non-root.
+
+TIP: If you are benchmarking storage, consider using the local NVMe drives attached to the A100 nodes.</code></pre>
+</div>
+</div>
+<hr>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_5_images_and_links"><a class="anchor" href="#_5_images_and_links"></a>5. Images and Links</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><strong>To embed an architecture diagram:</strong>
+(Ensure the image file is actually placed in your <code>images/</code> directory!)</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-asciidoc hljs" data-lang="asciidoc">image::doca-argus-telemetry.png[DOCA Argus Architecture Diagram]</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><strong>To link to an external site:</strong>
+(Always use <code>window=_blank</code> so the learner doesn&#8217;t lose their place in the course!)</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-asciidoc hljs" data-lang="asciidoc">Read the link:https://docs.nvidia.com[NVIDIA Documentation, window=_blank].</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><strong>To link to another page in your repository:</strong></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-asciidoc hljs" data-lang="asciidoc">Check out the xref:troubleshooting-rayclusters.adoc[Troubleshooting Guide].</code></pre>
+</div>
+</div>
+<hr>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_ready_set_build"><a class="anchor" href="#_ready_set_build"></a>Ready? Set. Build.</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>You have your CDD outline, you understand the repository structure, and you know the AsciiDoc syntax.</p>
+</div>
+<div class="paragraph">
+<p><strong>It&#8217;s time to start coding your blueprint.</strong></p>
+</div>
+</div>
+</div>
+<nav class="pagination">
+  <span class="prev"><a href="../lab/rhdp.html">RHDP Lab Selection</a></span>
+  <span class="next"><a href="asciidoc-advanced.html">Advanced Formatting</a></span>
+</nav>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <img src="../../../_/img/rhl-logo-red.png" height="40px" alt="Red Hat"  href="https://redhat.com" >
+</footer><script id="site-script" src="../../../_/js/site.js" data-ui-root-path="../../../_"></script>
+<script async src="../../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>
