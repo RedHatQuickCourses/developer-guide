@@ -1,3 +1,3 @@
-* Lab Infrastructure Guide
+* xref:index.adoc[Lab Infrastructure Guide]
 ** xref:rhdp.adoc[]
 // ** xref:role.adoc[]
