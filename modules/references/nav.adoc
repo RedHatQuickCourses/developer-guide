@@ -2,4 +2,4 @@
 // ** xref:glossary.adoc[]
 ** xref:asciidocqrg.adoc[]
 // ** xref:faq.adoc[]
-** xref:resources.adoc[]
+** xref:asciidoc-advanced.adoc[]
