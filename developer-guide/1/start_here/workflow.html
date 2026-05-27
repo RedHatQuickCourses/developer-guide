@@ -3,9 +3,9 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Execution Strategy &amp; Course Structure :: Red Hat Open Training Developer Guide</title>
+    <title>AI-Assisted Design Phase (The CDD) :: Red Hat Open Training Developer Guide</title>
     <link rel="prev" href="../index.html">
-    <link rel="next" href="../course_guide/index.html">
+    <link rel="next" href="../lab/index.html">
     <meta name="generator" content="Antora 3.1.3">
     <link rel="stylesheet" href="../../../_/css/site.css">
     <script>var uiRootPath = '../../../_'</script>
@@ -47,7 +47,7 @@
   <li class="nav-item" data-depth="0">
 <ul class="nav-list">
   <li class="nav-item is-current-page" data-depth="1">
-    <a class="nav-link" href="workflow.html">Strategy &amp; Structure</a>
+    <a class="nav-link" href="workflow.html">Course Design Phase</a>
   </li>
 </ul>
   </li>
@@ -55,29 +55,10 @@
 <ul class="nav-list">
   <li class="nav-item" data-depth="1">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="../course_guide/index.html">Course Contributor Guide</a>
+    <a class="nav-link" href="../lab/index.html">Lab Infrastructure Guide</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../course_guide/course_structure.html">Enablement Design Guide</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../course_guide/dev_spaces.html">Hackathon Objectives</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../course_guide/local_system.html">AI Assisted Course Design Template</a>
-  </li>
-</ul>
-  </li>
-</ul>
-  </li>
-  <li class="nav-item" data-depth="0">
-<ul class="nav-list">
-  <li class="nav-item" data-depth="1">
-    <button class="nav-item-toggle"></button>
-    <span class="nav-text">Lab Infrastructure Guide</span>
-<ul class="nav-list">
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../lab/rhdp.html">RHDP (skip if using ROLE)</a>
+    <a class="nav-link" href="../lab/rhdp.html">RHDP Lab Selection</a>
   </li>
 </ul>
   </li>
@@ -90,7 +71,7 @@
     <span class="nav-text">References</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../references/asciidocqrg.html">AsciiDoc Reference</a>
+    <a class="nav-link" href="../references/asciidocqrg.html">Toolchain Cheat Sheet</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../references/resources.html">Resources</a>
@@ -128,7 +109,7 @@
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
     <li><a href="../index.html">Red Hat Open Training Developer Guide</a></li>
-    <li><a href="workflow.html">Strategy &amp; Structure</a></li>
+    <li><a href="workflow.html">Course Design Phase</a></li>
   </ul>
 </nav>
 </div>
@@ -137,73 +118,101 @@
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<h1 class="page">Execution Strategy &amp; Course Structure</h1>
+<h1 class="page">AI-Assisted Design Phase (The CDD)</h1>
 <div class="sect1">
-<h2 id="_content_formats"><a class="anchor" href="#_content_formats"></a>Content Formats</h2>
-<div class="sectionbody">
-<div class="imageblock">
-<div class="content">
-<img src="_images/qc-structure.jpg" alt="qc structure">
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_understanding_the_quickcourse_directory_structure"><a class="anchor" href="#_understanding_the_quickcourse_directory_structure"></a>Understanding the QuickCourse Directory Structure</h2>
+<h2 id="_skip_the_blank_page_syndrome"><a class="anchor" href="#_skip_the_blank_page_syndrome"></a>Skip the Blank Page Syndrome</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The Red Hat QuickCourse toolchain is built on the Antora project. The structure of the course is organized as a hierarchy, so it&#8217;s helpful to think of the content in terms of chapters, or modules, and then pages, or sections.</p>
+<p>As an elite engineer, your time during this hackathon is best spent on technical execution and architecture.</p>
 </div>
 <div class="paragraph">
-<p>When you open your assigned repository, you will see the following key components:</p>
+<p>However, before you start writing AsciiDoc, you need a blueprint. We call this the <strong>Course Design Document (CDD)</strong>. We have an automated script (<code>skill.md</code>) that will read this CDD and automatically generate your entire GitHub repository structure, folders, and navigation map for you.</p>
 </div>
-<div class="sect2">
-<h3 id="_1_the_orchestrator_antora_yml"><a class="anchor" href="#_1_the_orchestrator_antora_yml"></a>1. The Orchestrator: <code>antora.yml</code></h3>
 <div class="paragraph">
-<p>At the top level (course), the <code>antora.yml</code> file defines the overall structure. It contains the course title and the links to the <code>nav.adoc</code> files in each module.</p>
+<p>To ensure the automation works, you must use an AI assistant to generate your CDD in a highly specific Markdown format.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_step_1_the_ai_generation_prompt"><a class="anchor" href="#_step_1_the_ai_generation_prompt"></a>Step 1: The AI Generation Prompt</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Copy the prompt below and paste it into your preferred AI assistant (e.g., ChatGPT, Claude, Red Hat Lightspeed) along with your raw technical notes.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">name: course
-title: Course Title
-version: 1
-nav:
-- modules/ch1/nav.adoc
-- modules/ch2/nav.adoc</code></pre>
+<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">You are an expert technical instructional designer. I am going to provide you with my raw notes, terminal outputs, and code snippets for a new Red Hat AI Factory with NVIDIA technical blueprint.
+
+Your task is to organize my notes into a structured Course Design Document (CDD) using STRICT Markdown formatting. The tone must be highly technical and geared toward Senior Platform Engineers and SREs. Heavily emphasize production-ready deployments, AI-first delivery methodology (using skills), and troubleshooting.
+
+CRITICAL: You must output the document exactly matching the schema below. Do not deviate from these heading names or the table structure, as this output will be parsed by an automated script.
+
+# [Insert Course Title Here]
+
+# COURSE GOAL
+[Write a 2-3 sentence overarching goal for the blueprint]
+
+# TARGET AUDIENCE
+[Define the primary persona, e.g., SRE, Platform Engineer]
+
+# PREREQUISITES
+[List required prior knowledge and tools]
+
+# LAB INFRASTRUCTURE REQUIREMENTS
+[Define hardware, required software, and pre-provisioned state. Note: Target baseline is NVIDIA Launchpad environments with dual H100 nodes unless otherwise specified.]
+
+# COURSE DESIGN
+| Description | Session Type |
+| --- | --- |
+| LEARNING OBJECTIVE #1: [Insert objective here] | |
+| [Insert specific hands-on task or troubleshooting concept] | Lecture |
+| [Insert the specific Lab scenario and Validation Checkpoints] | Lab |
+| LEARNING OBJECTIVE #2: [Insert objective here] | |
+| [Insert specific hands-on task or troubleshooting concept] | Lecture |
+| [Insert the specific Lab scenario and Validation Checkpoints] | Lab |
+
+Here are my raw notes:
+[INSERT YOUR RAW NOTES, CONFIG FILES, AND IDEAS HERE]</code></pre>
 </div>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_2_the_chapters_modules"><a class="anchor" href="#_2_the_chapters_modules"></a>2. The Chapters: <code>modules/</code></h3>
+</div>
+<div class="sect1">
+<h2 id="_step_2_validate_the_output_infrastructure_needs"><a class="anchor" href="#_step_2_validate_the_output_infrastructure_needs"></a>Step 2: Validate the Output &amp; Infrastructure Needs</h2>
+<div class="sectionbody">
 <div class="paragraph">
-<p>You will see a <code>modules</code> directory, with each module/chapter as a sub-directory. They do not need to be labeled ch1, ch2, etc., but their exact folder names must appear in the <code>antora.yml</code> file.</p>
+<p>Once the AI generates your CDD, save it as <code>prompts/course-design.md</code> in your repository. Before you run the automation, quickly verify two things:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>The Table Structure:</strong> Ensure the <code>Session Type</code> column strictly uses terms like <code>Lab</code> or <code>Lecture</code>. This tells the automation which file templates to use.</p>
+</li>
+<li>
+<p><strong>The Infrastructure:</strong> Ensure the <code># LAB INFRASTRUCTURE REQUIREMENTS</code> section accurately reflects your needs (targeting the dual H100 baseline) so the Open Training team can successfully host your playbook.</p>
+</li>
+</ul>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_3_the_map_nav_adoc"><a class="anchor" href="#_3_the_map_nav_adoc"></a>3. The Map: <code>nav.adoc</code></h3>
+</div>
+<div class="sect1">
+<h2 id="_step_3_auto_generate_your_repository"><a class="anchor" href="#_step_3_auto_generate_your_repository"></a>Step 3: Auto-Generate Your Repository</h2>
+<div class="sectionbody">
 <div class="paragraph">
-<p>Inside each module/chapter directory, there is a <code>nav.adoc</code> file. This is the listing of the <code>.adoc</code> files that actually contain your content.</p>
+<p>With your <code>course-design.md</code> file saved, you can now run the initialization script to scaffold your entire course structure automatically!</p>
 </div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-asciidoc hljs" data-lang="asciidoc">* xref:index.adoc[]
-** xref:section1.adoc[]
-** xref:section2.adoc[]</code></pre>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_4_the_content_visuals_pages_and_images"><a class="anchor" href="#_4_the_content_visuals_pages_and_images"></a>4. The Content &amp; Visuals: <code>pages/</code> and <code>images/</code></h3>
-<div class="paragraph">
-<p>Your written <code>.adoc</code> files should be placed in a <code>pages</code> directory. Any images that need to be referenced go into an <code>images</code> directory at the same level as <code>pages</code> and the <code>nav.adoc</code> file.</p>
-</div>
-<hr>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Next Step:</strong> Review the <strong><a href="#toolchain-cheatsheet.adoc" class="xref unresolved">AsciiDoc &amp; Antora Cheat Sheet</a></strong> to see how to format your code blocks and warnings once you start writing your content.</p>
+</li>
+</ul>
 </div>
 </div>
 </div>
 <nav class="pagination">
   <span class="prev"><a href="../index.html">Event Summary</a></span>
-  <span class="next"><a href="../course_guide/index.html">Course Contributor Guide</a></span>
+  <span class="next"><a href="../lab/index.html">Lab Infrastructure Guide</a></span>
 </nav>
 </article>
   </div>

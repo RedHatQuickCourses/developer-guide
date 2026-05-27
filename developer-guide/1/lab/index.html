@@ -3,7 +3,9 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Lab infrastructure guide :: Red Hat Open Training Developer Guide</title>
+    <title>NVIDIA Launchpad: Dual H100 Lab Environment :: Red Hat Open Training Developer Guide</title>
+    <link rel="prev" href="../start_here/workflow.html">
+    <link rel="next" href="rhdp.html">
     <meta name="generator" content="Antora 3.1.3">
     <link rel="stylesheet" href="../../../_/css/site.css">
     <script>var uiRootPath = '../../../_'</script>
@@ -45,37 +47,18 @@
   <li class="nav-item" data-depth="0">
 <ul class="nav-list">
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="../start_here/workflow.html">Strategy &amp; Structure</a>
+    <a class="nav-link" href="../start_here/workflow.html">Course Design Phase</a>
   </li>
 </ul>
   </li>
   <li class="nav-item" data-depth="0">
 <ul class="nav-list">
-  <li class="nav-item" data-depth="1">
+  <li class="nav-item is-current-page" data-depth="1">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="../course_guide/index.html">Course Contributor Guide</a>
+    <a class="nav-link" href="index.html">Lab Infrastructure Guide</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../course_guide/course_structure.html">Enablement Design Guide</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../course_guide/dev_spaces.html">Hackathon Objectives</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../course_guide/local_system.html">AI Assisted Course Design Template</a>
-  </li>
-</ul>
-  </li>
-</ul>
-  </li>
-  <li class="nav-item" data-depth="0">
-<ul class="nav-list">
-  <li class="nav-item" data-depth="1">
-    <button class="nav-item-toggle"></button>
-    <span class="nav-text">Lab Infrastructure Guide</span>
-<ul class="nav-list">
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="rhdp.html">RHDP (skip if using ROLE)</a>
+    <a class="nav-link" href="rhdp.html">RHDP Lab Selection</a>
   </li>
 </ul>
   </li>
@@ -88,7 +71,7 @@
     <span class="nav-text">References</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../references/asciidocqrg.html">AsciiDoc Reference</a>
+    <a class="nav-link" href="../references/asciidocqrg.html">Toolchain Cheat Sheet</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../references/resources.html">Resources</a>
@@ -126,7 +109,7 @@
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
     <li><a href="../index.html">Red Hat Open Training Developer Guide</a></li>
-    <li><a href="index.html">Lab infrastructure guide</a></li>
+    <li><a href="index.html">Lab Infrastructure Guide</a></li>
   </ul>
 </nav>
 </div>
@@ -135,13 +118,135 @@
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<h1 class="page">Lab infrastructure guide</h1>
+<h1 class="page">NVIDIA Launchpad: Dual H100 Lab Environment</h1>
+<div class="sect1">
+<h2 id="_the_sandbox_nvidia_launchpad"><a class="anchor" href="#_the_sandbox_nvidia_launchpad"></a>The Sandbox: NVIDIA Launchpad</h2>
+<div class="sectionbody">
 <div class="paragraph">
-<p>This section contains instructions on use of hands-on lab infrastructure for the training. You may either use <a href="rhdp.html" class="xref page">RHDP</a> or <a href="role.html" class="xref page">ROLE</a> for your lab environment.</p>
+<p>For this Content Accelerator, we have partnered with NVIDIA to host your hackathon workloads on <strong>NVIDIA Launchpad</strong>. Launchpad provides immediate, cloud-hosted access to NVIDIA-accelerated infrastructure.</p>
 </div>
 <div class="paragraph">
-<p>See <a href="../references/faq.html" class="xref page">faq</a> for additional guidance.</p>
+<p>Instead of burning days fighting with bare-metal provisioning or cloud quotas, you will be handed the keys to a pre-provisioned, Red Hat AI Factory-ready environment so you can focus entirely on building your blueprints.</p>
 </div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_the_hardware_dual_h100_nodes"><a class="anchor" href="#_the_hardware_dual_h100_nodes"></a>The Hardware: Dual H100 Nodes</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The baseline infrastructure for your playbooks will be environments featuring <strong>two NVIDIA H100 Tensor Core GPUs</strong> per worker node.</p>
+</div>
+<div class="paragraph">
+<p><strong>Why the H100 matters for your builds:</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Hopper Architecture:</strong> The H100 features a dedicated Transformer Engine, making it exceptionally fast at training and inferencing Large Language Models (LLMs) like Llama 3.</p>
+</li>
+<li>
+<p><strong>Interconnect:</strong> The dual GPUs are connected via NVLink, allowing them to pool memory and share data at incredibly high bandwidths, which is critical when deploying distributed inference engines (like vLLM or NVIDIA TensorRT-LLM) that require model sharding across multiple GPUs.</p>
+</li>
+<li>
+<p><strong>Capacity:</strong> This footprint is more than capable of hosting robust RAG (Retrieval-Augmented Generation) pipelines, vector databases, and multi-agent frameworks using the Llama Stack API.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_the_software_stack_the_ai_factory_floor"><a class="anchor" href="#_the_software_stack_the_ai_factory_floor"></a>The Software Stack: The AI Factory Floor</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Launchpad abstracts the hardware layer, but beneath your workloads is the full, opinionated <strong>Red Hat AI Factory with NVIDIA</strong> stack. Your environment will come pre-provisioned with the following:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Base OS:</strong> Red Hat Enterprise Linux (RHEL) CoreOS.</p>
+</li>
+<li>
+<p><strong>Orchestration:</strong> Red Hat OpenShift Container Platform (OCP).</p>
+</li>
+<li>
+<p><strong>The AI Layer:</strong> Red Hat OpenShift AI (RHOAI).</p>
+</li>
+<li>
+<p><strong>The Drivers:</strong> The <strong>NVIDIA GPU Operator</strong> will be pre-installed and configured. This is the critical bridge that automatically provisions the NVIDIA drivers, container toolkits, and device plugins required to expose the H100s to your Kubernetes pods.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_how_access_will_work"><a class="anchor" href="#_how_access_will_work"></a>How Access Will Work</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><strong>(Note: Specific credential distribution will occur on the morning of the kickoff).</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><strong>The Invitation:</strong> You will receive an email invitation to the NVIDIA Launchpad portal.</p>
+</li>
+<li>
+<p><strong>The Console:</strong> Launchpad operates via a web browser. You will log in to a centralized dashboard where you can access the OpenShift web console, as well as terminal/SSH access to interact with the cluster via <code>oc</code> or <code>kubectl</code> commands.</p>
+</li>
+<li>
+<p><strong>Your Namespace:</strong> You will likely be assigned a dedicated project/namespace within the OpenShift cluster to isolate your hackathon work from other teams.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_rules_of_engagement_best_practices"><a class="anchor" href="#_rules_of_engagement_best_practices"></a>Rules of Engagement &amp; Best Practices</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>To ensure everyone has a successful hackathon, please observe these lab practices:</p>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+<strong>Resource Hygiene:</strong> A dual H100 node is incredibly powerful, but resources are still finite. When you are done testing a heavy LLM deployment, scale your pods down to zero. Do not leave idle models locking up GPU memory overnight.
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<strong>Node Selectors &amp; Tolerations:</strong> When writing your YAML manifests or Helm charts, ensure you are using the correct node selectors and tolerations so your AI workloads actually land on the GPU-enabled worker nodes. (e.g., matching the <code>nvidia.com/gpu</code> resource limit).
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<strong>Assume Ephemerality:</strong> Launchpad environments have a strict time-to-live (TTL) and will be destroyed after the event. Store all your AsciiDoc content, CDDs, and code manifests locally or in your assigned GitHub repository—<strong>not</strong> on the Launchpad cluster itself.
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<nav class="pagination">
+  <span class="prev"><a href="../start_here/workflow.html">Course Design Phase</a></span>
+  <span class="next"><a href="rhdp.html">RHDP Lab Selection</a></span>
+</nav>
 </article>
   </div>
 </main>

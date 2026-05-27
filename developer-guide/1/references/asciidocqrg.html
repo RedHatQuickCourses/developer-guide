@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>AsciiDoc Quick Reference Guide :: Red Hat Open Training Developer Guide</title>
+    <title>AsciiDoc &amp; Antora Toolchain Cheat Sheet :: Red Hat Open Training Developer Guide</title>
     <link rel="prev" href="../lab/rhdp.html">
     <link rel="next" href="resources.html">
     <meta name="generator" content="Antora 3.1.3">
@@ -47,7 +47,7 @@
   <li class="nav-item" data-depth="0">
 <ul class="nav-list">
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="../start_here/workflow.html">Strategy &amp; Structure</a>
+    <a class="nav-link" href="../start_here/workflow.html">Course Design Phase</a>
   </li>
 </ul>
   </li>
@@ -55,29 +55,10 @@
 <ul class="nav-list">
   <li class="nav-item" data-depth="1">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="../course_guide/index.html">Course Contributor Guide</a>
+    <a class="nav-link" href="../lab/index.html">Lab Infrastructure Guide</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../course_guide/course_structure.html">Enablement Design Guide</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../course_guide/dev_spaces.html">Hackathon Objectives</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../course_guide/local_system.html">AI Assisted Course Design Template</a>
-  </li>
-</ul>
-  </li>
-</ul>
-  </li>
-  <li class="nav-item" data-depth="0">
-<ul class="nav-list">
-  <li class="nav-item" data-depth="1">
-    <button class="nav-item-toggle"></button>
-    <span class="nav-text">Lab Infrastructure Guide</span>
-<ul class="nav-list">
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../lab/rhdp.html">RHDP (skip if using ROLE)</a>
+    <a class="nav-link" href="../lab/rhdp.html">RHDP Lab Selection</a>
   </li>
 </ul>
   </li>
@@ -90,7 +71,7 @@
     <span class="nav-text">References</span>
 <ul class="nav-list">
   <li class="nav-item is-current-page" data-depth="2">
-    <a class="nav-link" href="asciidocqrg.html">AsciiDoc Reference</a>
+    <a class="nav-link" href="asciidocqrg.html">Toolchain Cheat Sheet</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="resources.html">Resources</a>
@@ -129,7 +110,7 @@
   <ul>
     <li><a href="../index.html">Red Hat Open Training Developer Guide</a></li>
     <li>References</li>
-    <li><a href="asciidocqrg.html">AsciiDoc Reference</a></li>
+    <li><a href="asciidocqrg.html">Toolchain Cheat Sheet</a></li>
   </ul>
 </nav>
 </div>
@@ -138,48 +119,50 @@
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<h1 class="page">AsciiDoc Quick Reference Guide</h1>
+<h1 class="page">AsciiDoc &amp; Antora Toolchain Cheat Sheet</h1>
 <div class="sect1">
-<h2 id="_introduction"><a class="anchor" href="#_introduction"></a>Introduction</h2>
+<h2 id="_the_goal_content_over_formatting"><a class="anchor" href="#_the_goal_content_over_formatting"></a>The Goal: Content Over Formatting</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>When building out your playbooks and technical blueprints, you want the focus to remain on the content, not the markup. Use this quick reference guide to handle the most common formatting needs, from basic text styling to embedding rich media and visual callouts.</p>
+<p>When building your AI Factory blueprints, we want you focused on the architecture, not fighting with markup.</p>
 </div>
 <div class="paragraph">
-<p>For deep dives into the syntax, you can always refer to the official <a href="https://docs.asciidoctor.org/asciidoc/latest/" target="_blank" rel="noopener">AsciiDoc Language Documentation</a> or the <a href="https://docs.antora.org/antora/latest/" target="_blank" rel="noopener">Antora Documentation</a>.</p>
+<p>We use <strong>Antora</strong> to build the site and <strong>AsciiDoc</strong> for the content. It functions as "docs-as-code." Use this cheat sheet for the 90% of formatting you will actually need during the hackathon.</p>
 </div>
 <hr>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_basic_text_formatting"><a class="anchor" href="#_basic_text_formatting"></a>Basic Text Formatting</h2>
+<h2 id="_1_the_antora_repository_map"><a class="anchor" href="#_1_the_antora_repository_map"></a>1. The Antora Repository Map</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Make your text readable by using these standard inline formats:</p>
+<p>When you clone your assigned GitHub repository, you will see a specific folder structure. Do not fight the structure; Antora requires it to compile your course.</p>
 </div>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Bold:</strong> <code><strong>Text goes here</strong></code> renders as <strong>Text goes here</strong></p>
-</li>
-<li>
-<p><strong>Italics:</strong> <code><em>Text goes here</em></code> renders as <em>Text goes here</em></p>
-</li>
-<li>
-<p><strong>Monospace (Code inline):</strong> <code>+`Code goes here</code>+` renders as <code>Code goes here</code></p>
-</li>
-<li>
-<p><strong>Highlight:</strong> <code><mark>Text goes here</mark></code> renders as highlighted text.</p>
-</li>
-</ul>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">repository-root/
+├── antora.yml               &lt;-- The Orchestrator (Defines course title &amp; module links)
+└── modules/
+    └── chapter1/
+        ├── nav.adoc         &lt;-- The Map (The table of contents for this chapter)
+        ├── pages/           &lt;-- YOUR CONTENT: All your .adoc files go here!
+        └── images/          &lt;-- YOUR MEDIA: Architecture diagrams and screenshots go here!</code></pre>
 </div>
+</div>
+<div class="paragraph">
+<p><strong>Golden Rule:</strong> If you write a new <code>.adoc</code> file in the <code>pages/</code> directory, you <strong>must</strong> add it to the <code>nav.adoc</code> file so it shows up in the course menu.
+<strong>Example <code>nav.adoc</code> entry:</strong> <code>** <a href="#my-new-page.adoc" class="xref unresolved">Setting up the GPU Operator</a></code></p>
+</div>
+<hr>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_headings_structure"><a class="anchor" href="#_headings_structure"></a>Headings &amp; Structure</h2>
+<h2 id="_2_asciidoc_essentials"><a class="anchor" href="#_2_asciidoc_essentials"></a>2. AsciiDoc Essentials</h2>
 <div class="sectionbody">
+<div class="sect2">
+<h3 id="_headings"><a class="anchor" href="#_headings"></a>Headings</h3>
 <div class="paragraph">
-<p>Use equal signs (<code>=</code>) to create sections. Remember that a single <code>=</code> is reserved for the document title at the top of the page.</p>
+<p>Keep it simple. Use equal signs. (Remember: <code>=</code> is reserved for the document title at the very top of the page).</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -189,99 +172,61 @@
 </div>
 </div>
 </div>
-</div>
-<div class="sect1">
-<h2 id="_lists"><a class="anchor" href="#_lists"></a>Lists</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Keep your steps clear and concise. Do not nest lists too deeply.</p>
-</div>
-<div class="paragraph">
-<p><strong>Bullet Points (Unordered):</strong></p>
-</div>
+<div class="sect2">
+<h3 id="_text_formatting"><a class="anchor" href="#_text_formatting"></a>Text Formatting</h3>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-asciidoc hljs" data-lang="asciidoc">* First item
-* Second item
-** Sub-item
-* Third item</code></pre>
+<pre class="highlightjs highlight"><code class="language-asciidoc hljs" data-lang="asciidoc">Make text **bold** or *italicized*.
+For inline code, commands, or parameters, use the plus sign: +oc get pods+</code></pre>
 </div>
 </div>
-<div class="paragraph">
-<p><strong>Numbered Steps (Ordered):</strong></p>
 </div>
+<div class="sect2">
+<h3 id="_lists"><a class="anchor" href="#_lists"></a>Lists</h3>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-asciidoc hljs" data-lang="asciidoc">. Step one
+<pre class="highlightjs highlight"><code class="language-asciidoc hljs" data-lang="asciidoc">* First bullet point
+** Nested bullet point
+
+. Step one (Use a single period for numbered lists)
 . Step two
-.. Sub-step
-. Step three</code></pre>
+.. Nested step</code></pre>
 </div>
 </div>
 <hr>
+</div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_visual_callouts_admonitions"><a class="anchor" href="#_visual_callouts_admonitions"></a>Visual Callouts (Admonitions)</h2>
+<h2 id="_3_code_blocks_terminal_output"><a class="anchor" href="#_3_code_blocks_terminal_output"></a>3. Code Blocks &amp; Terminal Output</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>When you need to draw attention to best practices, security warnings (e.g., STIG requirements), or helpful tips, use admonitions.</p>
+<p>Since you are building technical playbooks, you will use code blocks constantly. Always declare the source language for proper syntax highlighting.</p>
 </div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-asciidoc hljs" data-lang="asciidoc">NOTE: This is a standard note for general information.
-
-TIP: Use this to share a shortcut or best practice.
-
-IMPORTANT: Use this for crucial information the user must not skip.
-
-WARNING: Use this to warn the user about potential issues.
-
-CAUTION: Use this to advise against actions that could cause data loss or system failure.</code></pre>
-</div>
-</div>
-<hr>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-This is a standard note for general information.
-</td>
-</tr>
-</table>
-</div>
-<div class="admonitionblock important">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-important" title="Important"></i>
-</td>
-<td class="content">
-Use this for crucial information the user must not skip.
-</td>
-</tr>
-</table>
-</div>
-<hr>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_code_blocks"><a class="anchor" href="#_code_blocks"></a>Code Blocks</h2>
-<div class="sectionbody">
 <div class="paragraph">
-<p>Since you are building technical blueprints, you will frequently share code snippets, JSON, or YAML configurations. Wrap your code in four hyphens (<code>----</code>) and specify the language for syntax highlighting.</p>
+<p><strong>For YAML/Config files:</strong></p>
 </div>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-asciidoc hljs" data-lang="asciidoc">[source,yaml]
 ----
 apiVersion: v1
-kind: Pod
+kind: Namespace
 metadata:
-  name: example-pod
+  name: nvidia-gpu-operator
+----</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><strong>For Terminal/Bash commands:</strong></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-asciidoc hljs" data-lang="asciidoc">[source,bash]
+----
+curl -X POST http://llama-stack-api:8080/v1/chat/completions \
+  -H "Content-Type: application/json" \
+  -d '{"model": "llama3-8b", "messages": [{"role": "user", "content": "Hello"}]}'
 ----</code></pre>
 </div>
 </div>
@@ -289,205 +234,68 @@ metadata:
 </div>
 </div>
 <div class="sect1">
-<h2 id="_adding_rich_media_images_videos_html"><a class="anchor" href="#_adding_rich_media_images_videos_html"></a>Adding Rich Media (Images, Videos, HTML)</h2>
+<h2 id="_4_security_warnings_pro_tips_admonitions"><a class="anchor" href="#_4_security_warnings_pro_tips_admonitions"></a>4. Security Warnings &amp; Pro-Tips (Admonitions)</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Break up large blocks of text with visual architecture diagrams or instructional videos.</p>
-</div>
-<div class="sect2">
-<h3 id="_images"><a class="anchor" href="#_images"></a>Images</h3>
-<div class="paragraph">
-<p>Ensure your images are saved in the <code>images/</code> directory at the same level as your <code>.adoc</code> files.</p>
+<p>Break up walls of text and draw attention to critical requirements (like STIG compliance or destructive commands) using visual callouts.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-asciidoc hljs" data-lang="asciidoc">// Basic image insertion
-image::architecture-diagram.png[Architecture Diagram]
+<pre class="highlightjs highlight"><code class="language-asciidoc hljs" data-lang="asciidoc">NOTE: The NVIDIA GPU Operator must be installed before proceeding.
 
-// Image with specific formatting (width, alignment)
-image::architecture-diagram.png[Architecture Diagram, width=600, align="center"]</code></pre>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_videos"><a class="anchor" href="#_videos"></a>Videos</h3>
-<div class="paragraph">
-<p>You can easily embed videos from YouTube or Vimeo to provide visual walk-throughs.</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-asciidoc hljs" data-lang="asciidoc">video::dQw4w9WgXcQ[youtube, width=640, height=480]
-video::123456789[vimeo]</code></pre>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_raw_html_pass_through"><a class="anchor" href="#_raw_html_pass_through"></a>Raw HTML Pass-through</h3>
-<div class="paragraph">
-<p>If you have a specific HTML embed code (like an interactive terminal or a specialized web component) that AsciiDoc doesn&#8217;t natively support, you can pass it straight through to the browser.</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-asciidoc hljs" data-lang="asciidoc">++++
-&lt;iframe src="https://example.com/interactive-widget" width="100%" height="500"&gt;&lt;/iframe&gt;
-++++</code></pre>
-</div>
-</div>
-<iframe
-  src="https://demo.arcade.software/pIzuROOj0NbUY4pEHfxN?embed&embed_mobile=inline&embed_desktop=inline&show_copy_link=true"
-  width="100%"
-  height="600px"
-  frameborder="0"
-  allowfullscreen
-  webkitallowfullscreen
-  mozallowfullscreen
-  allow="clipboard-write"
-  muted>
-</iframe>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_hard_line_breaks"><a class="anchor" href="#_hard_line_breaks"></a>Hard Line Breaks</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Sometimes you need to start a new line without creating a completely new paragraph. You can use a hard line break by placing a plus sign (<code>+</code>) at the end of the line.</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-asciidoc hljs" data-lang="asciidoc">You may also use hard line breaks like this +
-for a new line within the paragraph.</code></pre>
-</div>
-</div>
-<hr>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_links_cross_references"><a class="anchor" href="#_links_cross_references"></a>Links &amp; Cross-References</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Connecting your learners to external resources or other parts of your course is crucial for building a cohesive blueprint.</p>
-</div>
-<div class="sect2">
-<h3 id="_external_links"><a class="anchor" href="#_external_links"></a>External Links</h3>
-<div class="paragraph">
-<p>To link to an external website, include the URL followed by the text in brackets. Use <code>window=_blank</code> so it opens in a new tab without losing the course page.</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-asciidoc hljs" data-lang="asciidoc">Read the https://docs.asciidoctor.org/asciidoc/latest/[official documentation,window=_blank].</code></pre>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_internal_links_cross_references"><a class="anchor" href="#_internal_links_cross_references"></a>Internal Links (Cross-References)</h3>
-<div class="paragraph">
-<p>To link to another page within the same chapter/section, use the <code>xref:</code> command.</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-asciidoc hljs" data-lang="asciidoc">Check out the xref:faq.adoc[FAQ page] for more details.</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>To link to a page in a completely different section/module, include the module name.</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-asciidoc hljs" data-lang="asciidoc">Review the xref:course_guide:course_structure.adoc[Course Structure guide].</code></pre>
-</div>
-</div>
-<hr>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_tables"><a class="anchor" href="#_tables"></a>Tables</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Tables are fantastic for comparing hardware benchmarks, organizing STIG requirements, or mapping out parameters.</p>
-</div>
-<div class="paragraph">
-<p>Here is the syntax for a standard table with a header row:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-asciidoc hljs" data-lang="asciidoc">[cols="2*",options="header"]
-|===
-|Column 1 Header
-|Column 2 Header
+WARNING: **STIG Mandate:** Ensure that all containers are configured to run as non-root.
 
-|Cell in column 1, row 2
-|Cell in column 2, row 2
-
-|Cell in column 1, row 3
-|Cell in column 2, row 3
-|===</code></pre>
+TIP: If you are benchmarking storage, consider using the local NVMe drives attached to the A100 nodes.</code></pre>
 </div>
 </div>
-<hr>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Column 1 Header</th>
-<th class="tableblock halign-left valign-top">Column 2 Header</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 1, row 2</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 2, row 2</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 1, row 3</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 2, row 3</p></td>
-</tr>
-</tbody>
-</table>
 <hr>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_local_media_audio"><a class="anchor" href="#_local_media_audio"></a>Local Media &amp; Audio</h2>
+<h2 id="_5_images_and_links"><a class="anchor" href="#_5_images_and_links"></a>5. Images and Links</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>If you are uploading local media files rather than linking out to YouTube or external URLs, you must place the files directly into the <code>modules/chapterN/images</code> directory.</p>
-</div>
-<div class="paragraph">
-<p><strong>Note: Even audio and video files go into the <code>images</code> folder!</strong></p>
-</div>
-<div class="paragraph">
-<p><strong>To reference an image:</strong></p>
+<p><strong>To embed an architecture diagram:</strong>
+(Ensure the image file is actually placed in your <code>images/</code> directory!)</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-asciidoc hljs" data-lang="asciidoc">image::sample-image.jpg[]</code></pre>
+<pre class="highlightjs highlight"><code class="language-asciidoc hljs" data-lang="asciidoc">image::doca-argus-telemetry.png[DOCA Argus Architecture Diagram]</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p><strong>To reference local video:</strong></p>
+<p><strong>To link to an external site:</strong>
+(Always use <code>window=_blank</code> so the learner doesn&#8217;t lose their place in the course!)</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-asciidoc hljs" data-lang="asciidoc">video::video-file.mp4[]</code></pre>
+<pre class="highlightjs highlight"><code class="language-asciidoc hljs" data-lang="asciidoc">Read the link:https://docs.nvidia.com[NVIDIA Documentation, window=_blank].</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p><strong>To reference local audio (great for voiceover explanations):</strong></p>
+<p><strong>To link to another page in your repository:</strong></p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-asciidoc hljs" data-lang="asciidoc">audio::audio-file.wav[]</code></pre>
+<pre class="highlightjs highlight"><code class="language-asciidoc hljs" data-lang="asciidoc">Check out the xref:troubleshooting-rayclusters.adoc[Troubleshooting Guide].</code></pre>
 </div>
+</div>
+<hr>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_ready_set_build"><a class="anchor" href="#_ready_set_build"></a>Ready? Set. Build.</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>You have your CDD outline, you understand the repository structure, and you know the AsciiDoc syntax.</p>
+</div>
+<div class="paragraph">
+<p><strong>It&#8217;s time to start coding your blueprint.</strong></p>
 </div>
 </div>
 </div>
 <nav class="pagination">
-  <span class="prev"><a href="../lab/rhdp.html">RHDP (skip if using ROLE)</a></span>
+  <span class="prev"><a href="../lab/rhdp.html">RHDP Lab Selection</a></span>
   <span class="next"><a href="resources.html">Resources</a></span>
 </nav>
 </article>
