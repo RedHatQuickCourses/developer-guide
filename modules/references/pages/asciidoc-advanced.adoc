@@ -1,0 +1,145 @@
+= Advanced AsciiDoc Formatting for Engineers
+:navtitle: Advanced Formatting
+
+== Leveling Up Your Blueprints
+
+The xref:toolchain-cheatsheet.adoc[Basic Cheat Sheet] covers everything you need to build a functional playbook. However, if you are documenting complex Red Hat AI Factory deployments, you will likely encounter massive YAML files, long terminal outputs, and dynamic software versions. 
+
+Use these advanced AsciiDoc features to make your blueprints highly professional, readable, and easy to maintain.
+
+---
+
+== 1. Code Callouts (Explaining Code Line-by-Line)
+
+When providing a complex YAML manifest (like a RayCluster or a vLLM deployment), don't write a massive paragraph explaining it below the block. Use **Code Callouts** to link your explanations directly to the specific lines of code.
+
+[source,asciidoc]
+......
+[source,yaml]
+----
+apiVersion: v1
+kind: Pod
+metadata:
+  name: vllm-inference
+spec:
+  containers:
+  - name: vllm
+    image: nvcr.io/nvidia/vllm:latest
+    resources:
+      limits:
+        nvidia.com/gpu: 2 # <1>
+  tolerations:
+  - key: "nvidia.com/gpu" # <2>
+    operator: "Exists"
+    effect: "NoSchedule"
+----
+<1> This limit requests exactly two GPUs (our dual H100 baseline) via the NVIDIA device plugin.
+<2> This toleration ensures the pod is allowed to schedule on the tainted GPU worker nodes.
+......
+
+---
+
+== 2. Collapsible Blocks (Hiding Massive Terminal Output)
+
+If you need to show the output of an `oc describe node` or a massive JSON response from the Llama Stack API, do not force the learner to scroll past 100 lines of text. Wrap it in a collapsible block.
+
+[source,asciidoc]
+......
+Run the validation command. The output should look similar to this:
+
+[%collapsible]
+.Click to expand full JSON output
+====
+[source,json]
+----
+{
+  "id": "cmpl-8x9",
+  "object": "text_completion",
+  "created": 1700000000,
+  "model": "meta-llama/Llama-3-70b-chat-hf",
+  "choices": [
+    {
+      "text": "Hello! I am ready to assist you.",
+      "index": 0,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 12,
+    "completion_tokens": 9,
+    "total_tokens": 21
+  }
+}
+----
+====
+......
+
+---
+
+== 3. Interactive Tabs (CLI vs. Web Console)
+
+A great technical playbook often shows learners how to accomplish a task via the Command Line Interface (CLI) *and* via the OpenShift Web Console UI. You can use the Antora tabs extension to present these options cleanly without cluttering the page.
+
+[source,asciidoc]
+......
+[tabs]
+====
+oc CLI::
++
+--
+[source,bash]
+----
+oc apply -f https://raw.githubusercontent.com/NVIDIA/gpu-operator/master/deploy/validatingwebhook.yaml
+----
+--
+
+Web Console::
++
+--
+. Log in to the OpenShift Web Console.
+. Navigate to **Operators** -> **OperatorHub**.
+. Search for `NVIDIA GPU Operator` and click **Install**.
+--
+====
+......
+*Note: The `+` and `--` syntax is critical for keeping the code block correctly nested inside the tab!*
+
+---
+
+== 4. Document Attributes (Using Variables)
+
+If your playbook relies heavily on a specific version of a model, an operator, or a namespace name, do not hardcode it 50 times. Define it as a variable (an Attribute) at the top of your page. If the version changes next month, you only have to update it in one place.
+
+[source,asciidoc]
+......
+// Define attributes at the very top of your .adoc file, right under the title
+:operator-version: 23.9.0
+:gpu-type: H100
+:namespace: models-as-a-service
+
+Ensure you are deploying version {operator-version} of the GPU Operator into the {namespace} namespace. Since we are using {gpu-type} hardware, we must configure the cluster policy accordingly.
+
+[source,bash]
+----
+oc create namespace {namespace}
+----
+......
+
+---
+
+== 5. Including External Files
+
+If you have written a massive Python script or a huge Helm `values.yaml` file that you want to share with the learner, do not copy and paste it into the `.adoc` file. 
+
+Instead, place the actual file in your repository (typically in an `attachments/` folder) and use the `include::` directive to pull it into the document dynamically.
+
+[source,asciidoc]
+......
+Review the full values file below:
+
+[source,yaml]
+----
+\include::attachment$values-h100.yaml[]
+----
+......
+*(Note: The backslash before `include` in this example is just to escape it for the cheat sheet. Remove the backslash in your actual code!)*
