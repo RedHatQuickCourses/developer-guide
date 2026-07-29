@@ -1,1 +1,3 @@
-* xref:workflow.adoc[]
+* Getting started
+** xref:workflow.adoc[Getting started]
+** xref:ai-assisted-cdd.adoc[AI-assisted CDD (AI Factory)]

@@ -1,0 +1,42 @@
+= Red Hat & NVIDIA AI Factory Content Accelerator
+:navtitle: AI Factory accelerator
+
+== The Mission: Industrialize Enterprise AI
+
+Welcome to the Virtual AI Factory w/ NVIDIA Content Accelerator. While we won't be in Frankfurt, this intensive, distributed hackathon is designed to bridge the gap between theoretical AI product knowledge and industrial-scale, real-world execution.
+
+In a world where AI can quickly generate code and match patterns, it still lacks the "hard knocks" of real-world trial and error. AI does not inherently understand *why* a specific architecture led to results, or why alternative methods technically work but ultimately fail in production. 
+
+**That is where you come in.** Your true value lies in sharing the lessons learned through failure, iteration, and field experience. Together, we are going to translate your raw expertise into the "field-opinionated" playbooks and technical blueprints required to deliver Red Hat and NVIDIA AI Factory solutions at scale.
+
+== The Engine: Open Training & Giveback Incentives
+
+To rapidly capture and distribute your playbooks, we are utilizing the **Red Hat Open Training framework** as our delivery vehicle. You will build your blueprints using a straightforward "docs-as-code" approach (AsciiDoc and Antora), allowing you to focus purely on technical accuracy while the framework handles the formatting, scaling, and publishing.
+
+**Your Impact & Reward:** By contributing to this accelerator, you are directly empowering internal associates, partners, and customers to replicate your success. Furthermore, your published blueprints are highly visible and eligible for recognition through the **Red Hat Giveback Program** (e.g., earning 4 points for new courses and 3 points for updates).
+
+== Hackathon Goals & Business Impact
+
+To maintain focus and drive immediate customer value, your hackathon builds will target these core objectives. *(Note: Specific tracks and workloads will be finalized and assigned prior to our kickoff on the 15th).*
+
+* **Production-Ready Deployments:** Develop automated Quickstarts and Playbooks (using OpenShift AI and NVIDIA NIM) that provide the field with a clear, repeatable path to production, accelerating time-to-value.
+* **Autonomous Agents:** Build enablement around the Llama Stack API and NVIDIA OpenShell runtime to guide teams in transitioning from simple chatbots to highly secure, industrial-scale AI agents.
+* **High-Performance Serving:** Establish hardware and storage benchmarking standards for NVIDIA-Certified Systems to ensure deployments meet strict AI service level objectives and reduce TCO.
+* **Security & Regulatory Compliance:** Integrate STIG-hardened containers, RHEL, and NVIDIA BlueField DPUs to deliver a zero-trust architecture for mission-critical, regulated industries.
+* **AI-First Delivery & Enablement:** Apply an AI-first delivery approach using "skills" to automate framework delivery, shifting from traditional manual consulting to scalable, AI-assisted field operations for Specialists, Consultants, and Partners.
+
+== The Definition of "Done"
+
+By the end of this hackathon, a successful blueprint submission will include:
+. A completed, AI-assisted **Course Design Document (CDD)** mapping out your technical concepts to actionable tasks.
+. A working hands-on lab environment scenario (targeting the dual H100 baseline—either a step-by-step *How-To* or a troubleshooting *Break-Fix*).
+. An Antora-compliant GitHub repository containing your structured AsciiDoc pages and navigation map.
+
+== Next Steps
+
+Ready to start building? Use the Open Training toolchain so you can focus on the technical story.
+
+* **Step 1:** Follow xref:start_here:ai-assisted-cdd.adoc[AI-Assisted Design Phase (CDD)] to generate a course outline from your notes.
+* **Step 2:** Review formatting guidance under xref:references:asciidocqrg.adoc[References] and create your repo from the https://github.com/RedHatQuickCourses/course-starter-template[course-starter-template,window=_blank].
+* **Step 3:** Author your playbook in AsciiDoc and use the lab guidance under xref:lab:index.adoc[Lab Infrastructure].
+* **General Open Training path:** xref:start_here:workflow.adoc[Getting started] (non-hackathon contributors).

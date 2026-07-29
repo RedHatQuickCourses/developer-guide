@@ -1,62 +1,31 @@
-= AI-Assisted Design Phase (The CDD)
-:navtitle: Course Design Phase
+= Getting started
+:navtitle: Getting started
 
-== Skip the Blank Page Syndrome
+You don't need to overplan, but you should have a plan.
+Follow these high level steps to get started:
 
-As an elite engineer, your time during this hackathon is best spent on technical execution and architecture. 
+. Make sure you know what kind of training you want to create.
+There are a few different types to choose from:
+* xref:references:glossary.adoc#Know-It[know-it training] focuses on knowledge content and does not have any lab environments.
+Think about this as something closer to a blog.
+* xref:references:glossary.adoc#How-To[how-to training] focuses on hands-on labs across a variety of activities from installation to use-cases with Red Hat products.
+* xref:references:glossary.adoc#Break-Fix[break-fix training] is a subset of how-to and focuses on on troubleshooting activities in a hands-on lab environment.
 
-However, before you start writing AsciiDoc, you need a blueprint. We call this the **Course Design Document (CDD)**. We have an automated script (`skill.md`) that will read this CDD and automatically generate your entire GitHub repository structure, folders, and navigation map for you. 
+. If you need a learner to have a lab environment, decide which one you want to use:
+* xref:references:glossary.adoc#RHDP[Red Hat Demo Platform (RHDP)] is the preferred lab type and should be suitable for all *how-to* and *break-fix* content.
+* xref:references:glossary.adoc#ROLE[ROLE] can be used for content that has an established plan for publication on the GLS platform.
 
-To ensure the automation works, we ask that your CDD be in the following specific Markdown format.
+. Submit a https://docs.google.com/forms/d/e/1FAIpQLSepUaRiRdyA3PEzLP8w59reAsKRe19dL3ewpJGvJ7Gbggt-xg/viewform[training request,window=_blank] for type *Open Training*.
+This will notify our Learning Product Managers and they will contact you as quickly as possible either with a request for more information or with the next steps, which is usually to connect you with the team that will help get your work going.
++
+NOTE: You may track or update your request in https://issues.redhat.com/secure/RapidBoard.jspa?rapidView=20243[Jira,window=_blank].
 
-== Step 1: The AI Generation Prompt
+. Once the request is validated and approved, write the content and work with the PTL team to develop the lab environment.
+This is the part that you came here to do and where you should spend most of your time.
 
-The prompt below contains the specific template. You are paste it into your preferred AI assistant (e.g., ChatGPT, Claude, Red Hat Lightspeed) along with your raw technical notes. 
+== What Next?
 
-[source,text]
-----
-You are an expert technical instructional designer. I am going to provide you with my raw notes, terminal outputs, and code snippets for a new Red Hat AI Factory with NVIDIA technical blueprint. 
+Once you have completed these steps and are ready to start, you can find more guidance in the following sections:
 
-Your task is to organize my notes into a structured Course Design Document (CDD) using STRICT Markdown formatting. The tone must be highly technical and geared toward Senior Platform Engineers and SREs. Heavily emphasize production-ready deployments, AI-first delivery methodology (using skills), and troubleshooting.
-
-CRITICAL: You must output the document exactly matching the schema below. Do not deviate from these heading names or the table structure, as this output will be parsed by an automated script.
-
-# [Insert Course Title Here]
-
-# COURSE GOAL
-[Write a 2-3 sentence overarching goal for the blueprint]
-
-# TARGET AUDIENCE
-[Define the primary persona, e.g., SRE, Platform Engineer]
-
-# PREREQUISITES
-[List required prior knowledge and tools]
-
-# LAB INFRASTRUCTURE REQUIREMENTS
-[Define hardware, required software, and pre-provisioned state. Note: Target baseline is NVIDIA Launchpad environments with dual H100 nodes unless otherwise specified.]
-
-# COURSE DESIGN
-| Description | Session Type |
-| --- | --- |
-| LEARNING OBJECTIVE #1: [Insert objective here] | |
-| [Insert specific hands-on task or troubleshooting concept] | Lecture |
-| [Insert the specific Lab scenario and Validation Checkpoints] | Lab |
-| LEARNING OBJECTIVE #2: [Insert objective here] | |
-| [Insert specific hands-on task or troubleshooting concept] | Lecture |
-| [Insert the specific Lab scenario and Validation Checkpoints] | Lab |
-
-Here are my raw notes:
-[INSERT YOUR RAW NOTES, CONFIG FILES, AND IDEAS HERE]
-----
-
-== Step 2: Validate the Output & Infrastructure Needs
-
-Once the AI generates your CDD, save it as `prompts/course-design.md` in your repository. Before you run the automation, quickly verify two things:
-
-* **The Table Structure:** Ensure the `Session Type` column strictly uses terms like `Lab` or `Lecture`. This tells the automation which file templates to use.
-
-== Step 3: Auto-Generate Your Repository
-
-With your `course-design.md` file saved, you can now run the initialization script to scaffold your entire course structure automatically!
-
-* **Next Step:** Review the Formating Cheat Sheet ** to see how to format your code blocks and warnings once you start writing your content.
+* xref:course_guide:index.adoc[Course development]
+* xref:lab:index.adoc[Lab development]

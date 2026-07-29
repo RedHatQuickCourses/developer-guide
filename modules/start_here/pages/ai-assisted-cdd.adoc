@@ -1,0 +1,62 @@
+= AI-Assisted Design Phase (The CDD)
+:navtitle: Course Design Phase
+
+== Skip the Blank Page Syndrome
+
+As an elite engineer, your time during this hackathon is best spent on technical execution and architecture. 
+
+However, before you start writing AsciiDoc, you need a blueprint. We call this the **Course Design Document (CDD)**. We have an automated script (`skill.md`) that will read this CDD and automatically generate your entire GitHub repository structure, folders, and navigation map for you. 
+
+To ensure the automation works, we ask that your CDD be in the following specific Markdown format.
+
+== Step 1: The AI Generation Prompt
+
+The prompt below contains the specific template. You are paste it into your preferred AI assistant (e.g., ChatGPT, Claude, Red Hat Lightspeed) along with your raw technical notes. 
+
+[source,text]
+----
+You are an expert technical instructional designer. I am going to provide you with my raw notes, terminal outputs, and code snippets for a new Red Hat AI Factory with NVIDIA technical blueprint. 
+
+Your task is to organize my notes into a structured Course Design Document (CDD) using STRICT Markdown formatting. The tone must be highly technical and geared toward Senior Platform Engineers and SREs. Heavily emphasize production-ready deployments, AI-first delivery methodology (using skills), and troubleshooting.
+
+CRITICAL: You must output the document exactly matching the schema below. Do not deviate from these heading names or the table structure, as this output will be parsed by an automated script.
+
+# [Insert Course Title Here]
+
+# COURSE GOAL
+[Write a 2-3 sentence overarching goal for the blueprint]
+
+# TARGET AUDIENCE
+[Define the primary persona, e.g., SRE, Platform Engineer]
+
+# PREREQUISITES
+[List required prior knowledge and tools]
+
+# LAB INFRASTRUCTURE REQUIREMENTS
+[Define hardware, required software, and pre-provisioned state. Note: Target baseline is NVIDIA Launchpad environments with dual H100 nodes unless otherwise specified.]
+
+# COURSE DESIGN
+| Description | Session Type |
+| --- | --- |
+| LEARNING OBJECTIVE #1: [Insert objective here] | |
+| [Insert specific hands-on task or troubleshooting concept] | Lecture |
+| [Insert the specific Lab scenario and Validation Checkpoints] | Lab |
+| LEARNING OBJECTIVE #2: [Insert objective here] | |
+| [Insert specific hands-on task or troubleshooting concept] | Lecture |
+| [Insert the specific Lab scenario and Validation Checkpoints] | Lab |
+
+Here are my raw notes:
+[INSERT YOUR RAW NOTES, CONFIG FILES, AND IDEAS HERE]
+----
+
+== Step 2: Validate the Output & Infrastructure Needs
+
+Once the AI generates your CDD, save it as `prompts/course-design.md` in your repository. Before you run the automation, quickly verify two things:
+
+* **The Table Structure:** Ensure the `Session Type` column strictly uses terms like `Lab` or `Lecture`. This tells the automation which file templates to use.
+
+== Step 3: Auto-Generate Your Repository
+
+With your `course-design.md` file saved, you can now run the initialization script to scaffold your entire course structure automatically!
+
+* **Next Step:** Review the Formating Cheat Sheet ** to see how to format your code blocks and warnings once you start writing your content.
